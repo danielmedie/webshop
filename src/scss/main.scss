@@ -21,7 +21,9 @@ body{
         font-size: 12px;
         height: 30vh;
         width: 100%;
-        margin-bottom: 0;
+        position: relative;
+        bottom: 0;
+        // margin-bottom: 0;
         #footer-container {
             display: flex;
             flex-direction: row;
@@ -91,13 +93,17 @@ body{
                 
             // }
         }
-
-        @include m.desktop {
-
+    }
+    @include m.desktop {
+        // display: flex;
+        // flex-direction: column;
             #contact {
-                font-size: 12px;
-                height: 30vh;
+                font-size: 22px;
+                height: 40vh;
                 width: 100%;
+                margin-bottom: 0;
+                position: absolute;
+                bottom: 0;
                 margin-bottom: 0;
                 #footer-container {
                     display: flex;
@@ -109,8 +115,9 @@ body{
                     margin-right: 0;
                     #image-container{
                         margin-left: 0;
-                        width: 45%;
-                        // height: 200px;  
+                        justify-items: left;
+                        width: 25%;
+                        height: 200px;  
                         margin-top: 5%  ;
                         // border: 1px solid #7D869C;
                         #footer-img{
@@ -124,7 +131,8 @@ body{
                     .contact__adress{
                     margin-top: 10px;
                     padding-right: 10px;
-                    padding-left: 10px;
+                    margin-left: 80px;
+                    padding-left: v.$xlarge;
                     align-items: center;
                     list-style-type: none;
                     padding-left: 20px;
@@ -139,6 +147,8 @@ body{
                         padding-right: 10px;
         
                     margin-top: 10px;
+                    margin-right: 25%;
+                    margin-left: 40px;
                     // margin-right: 60px;
                     list-style-type: none;
                     // margin-left: 40px;
@@ -160,6 +170,7 @@ body{
                     } 
                 }
                 #copyright {
+                    background-color: #7D869C;
                     display: flex;
                     flex-direction: column;
                     // justify-content: center;
@@ -168,8 +179,8 @@ body{
                         
                     // }
                 }
-
-            } 
-        }
+    
+            }    
+        
     }
 }
