@@ -1,4 +1,5 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
 body{
     margin: 0;
@@ -90,5 +91,85 @@ body{
                 
             // }
         }
-      }
+
+        @include m.desktop {
+
+            #contact {
+                font-size: 12px;
+                height: 30vh;
+                width: 100%;
+                margin-bottom: 0;
+                #footer-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: end;
+                    // padding-right: 60px;
+                    width: 100%;
+                    margin-bottom: 0;
+                    margin-right: 0;
+                    #image-container{
+                        margin-left: 0;
+                        width: 45%;
+                        // height: 200px;  
+                        margin-top: 5%  ;
+                        // border: 1px solid #7D869C;
+                        #footer-img{
+                            width: 100%;
+                            height: 100%;
+                            background-size: cover;
+                            // border: 1px solid #7D869C;
+                            background-image: url('../assets/image-from-rawpixel-id-6439835-original.png');
+                        }
+                    }
+                    .contact__adress{
+                    margin-top: 10px;
+                    padding-right: 10px;
+                    padding-left: 10px;
+                    align-items: center;
+                    list-style-type: none;
+                    padding-left: 20px;
+        
+                        .contact__adress__info{
+                            width: v.$full_width;
+                            padding: v.$small v.$zero;
+                        }
+                    }
+                    .contact__social{
+                        padding-left: 10px;
+                        padding-right: 10px;
+        
+                    margin-top: 10px;
+                    // margin-right: 60px;
+                    list-style-type: none;
+                    // margin-left: 40px;
+                        .contact__social__media{
+                            width: v.$full_width;
+                            margin: 0;
+                            list-style-type: none;
+                            padding: v.$small v.$zero v.$small v.$zero;
+                            #instagram{
+                            padding-left: v.$small;
+                            }
+                            #twitter{
+                            padding-left: v.$xsmall;
+                            }
+                            #facebook{
+                            padding-left: 14px;
+                            }
+                        }
+                    } 
+                }
+                #copyright {
+                    display: flex;
+                    flex-direction: column;
+                    // justify-content: center;
+                    align-items: center;
+                    // #copyright_paragraph{
+                        
+                    // }
+                }
+
+            } 
+        }
+    }
 }
