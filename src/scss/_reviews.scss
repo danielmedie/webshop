@@ -18,7 +18,9 @@ background-color: v.$primary_bg; ;
         //flex-wrap: wrap;
         
     }
-    
+    &__title{
+        color: v.$my_lilac;
+    }
     &__boxes{
         width: 300px;
         height: v.$xlarge;
