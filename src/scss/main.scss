@@ -6,15 +6,46 @@ body{
     background-color: v.$primary_bg;
     margin: 0;
     width: 100%;
+    #om-oss_head {
+        text-align: center;
+        color: #A2ABAB;
+        @include m.desktop {
+            color: #B4C4AE;
+        }
 
+    }
     #om-oss {
         height: 100%;
         background-color: #586994;
         font: 16px;
         padding: 30px;
-        h2 {
-            text-align: center;
-            color: #A2ABAB;
+        // h2 {
+        //     text-align: center;
+        //     color: #A2ABAB;
+        // }
+        @include m.desktop {
+            background-color: #A2ABAB;
+            color: #586994;
+            // display: flex;
+
+            // #om-oss_head {
+            //     color: #B4C4AE;
+                
+            // }
+            #logo-container{
+                margin-left: 0;
+                width: 45%;
+                height: 200px;  
+                margin-top: 5%;
+                // border: 1px solid #7D869C;
+                #om-oss__image{
+                    width: 100%;
+                    height: 100%;
+                    background-size: cover;
+                    // border: 1px solid #7D869C;
+                    background-image: url('../assets/image-from-rawpixel-id-6439835-original.png');
+                }
+            }
         }
     }
 
