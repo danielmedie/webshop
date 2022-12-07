@@ -1,0 +1,55 @@
+@use 'variables' as v;
+
+body{
+    #contact {
+        background-color: #7D869C;
+        font-size: 22px;
+        height: 62vh;
+        #footer-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            padding-right: v.$xlarge;
+        
+        .contact__adress{
+          margin-top: v.$xlarge;
+          align-items: center;
+          list-style-type: none;
+          .contact__adress__info{
+            width: v.$full_width;
+            padding: v.$small v.$zero;
+          }
+        }
+        .contact__social{
+          margin-top: v.$xlarge;
+          margin-right: v.$xlarge;
+          list-style-type: none;
+          margin-left: 40px;
+          .contact__social__media{
+            width: v.$full_width;
+            margin: 0;
+            list-style-type: none;
+            padding: v.$small v.$zero v.$small v.$zero;
+            #instagram{
+              padding-left: v.$small;
+            }
+            #twitter{
+              padding-left: v.$xsmall;
+            }
+            #facebook{
+              padding-left: 14px;
+            }
+          }
+        } 
+    }
+        #copyright {
+            display: flex;
+            flex-direction: column;
+            // justify-content: center;
+            align-items: center;
+            #copyright_paragraph{
+                
+            }
+        }
+      }
+}
