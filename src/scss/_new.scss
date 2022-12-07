@@ -1,0 +1,11 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.new-in__header{
+    margin: 0 auto;
+    &__title{
+        display: flex;
+    justify-content: center;
+    color: v.$my_lilac;
+    }
+}
