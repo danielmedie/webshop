@@ -5,7 +5,107 @@
 body{
     background-color: v.$primary_bg;
     margin: 0;
-    width: 100%;
+    width: 100%;    
+    #home{
+        height: 10vh;
+        // display: flex;
+        // justify-content: center;
+        // flex-wrap: wrap;
+        header{
+        //   background-image: v.$hero_image;
+        //   background-size: cover;
+        //   background-repeat: no-repeat;
+        //   background-position: center;
+          height: v.$full_height;
+          width: v.$full_width;
+        //   margin: 0;
+
+            #toggle {
+              display: none;
+              }
+            .hamburger {
+              position: absolute;
+              text-align: center;
+              top: 5em;
+              right: 5%;
+              margin: -60px v.$small v.$zero -2em ;
+              width: 2em;
+              height: 45px;
+              z-index: 5;
+              margin-bottom: 5px;
+              padding-right: v.$small;
+            }
+            .hamburger div {
+              position: relative;
+              width: 3em;
+              height: 7px;
+              border-radius: 3px;
+              background-color: v.$main_color;
+              margin-top: 8px;
+              transition: all 0.3s ease-in-out;
+            }
+            /**
+                  Nav Styles
+            **/
+            .nav {
+              width: v.$full_width;
+              overflow: hidden;
+              transition: all 0.3s ease-in-out;
+              transform: scale(0);
+              .nav-wrapper {
+                position: relative;
+                overflow: hidden;
+                overflow-y: auto;
+                height: v.$full_height;
+                .nav__wrapper__nav {
+                  text-align: center;
+                  padding-top: 25px;
+                  background-color: rgba(255, 255, 255, 0.163);
+                  .nav__wrapper__nav--a {
+                    position: relative;
+                    text-decoration: none;
+                    color: v.$main_color;
+                    font-size: v.$nav_font_size;
+                    display: inline-block;
+                    margin-top: v.$xsmall;
+                    transition: color 0.2s ease-in-out;
+                    letter-spacing: 1px;
+                    &:before {
+                      content: '';
+                    }
+                    &:hover {
+                      color: v.$main_color;
+                      border-bottom: v.$border_size solid v.$main_color;
+            
+                    }
+                    &:hover::before {
+                      height: v.$full_height;
+                    }
+                  }
+                }
+              }
+            } 
+  
+            /**Animations**/
+  
+            #toggle:checked + .hamburger .top-bun {
+              transform: rotate(-45deg);
+            }
+            #toggle:checked + .hamburger .bottom-bun {
+              opacity: 0;
+              transform: rotate(45deg);
+            }
+            #toggle:checked + .hamburger .meat {
+              transform: rotate(45deg);
+              margin-top: -7px;
+            }
+              
+            #toggle:checked + .hamburger + .nav {
+              top: 0;
+              transform: scale(1);
+            }
+        }
+      } 
     #om-oss_head {
         text-align: center;
         color: #A2ABAB;
@@ -106,14 +206,16 @@ body{
             margin-right: 0;
             #image-container{
                 margin-left: 0;
-                width: 45%;
-                // height: 200px;  
+                width: 35%;
+                height: 150px;  
                 margin-top: 5%  ;
                 // border: 1px solid #7D869C;
                 #footer-img{
                     width: 100%;
                     height: 100%;
                     background-size: cover;
+                    // background-repeat: no-repeat;
+                    // background-position: center;
                     // border: 1px solid #7D869C;
                     background-image: url('../assets/image-from-rawpixel-id-6439835-original.png');
                 }
@@ -161,6 +263,8 @@ body{
             flex-direction: column;
             // justify-content: center;
             align-items: center;
+            background-color: #7D869C;
+
             // #copyright_paragraph{
               margin: 0 auto;
                 
