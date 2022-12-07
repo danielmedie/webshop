@@ -1,10 +1,18 @@
 @use "mixins" as m;
 @use "variables" as v;
 
+.review__header{
+    background-color: v.$primary_bg;
+    display: flex;
+    justify-content: center;
+    #title__color{
+        color: v.$my_lilac;
+    }
+}
+
 .review__container{
     width: v.$full_width;
-
-background-color: v.$primary_bg; ;
+    background-color: v.$primary_bg;
     display: flex;
     flex-direction: column;
     // flex-wrap: wrap;
@@ -16,10 +24,6 @@ background-color: v.$primary_bg; ;
         justify-content: center;
         flex-direction: row;
         //flex-wrap: wrap;
-        
-    }
-    &__title{
-        color: v.$my_lilac;
     }
     &__boxes{
         width: 300px;
@@ -34,6 +38,7 @@ background-color: v.$primary_bg; ;
         @include m.desktop{
             display: wrap;
             width:40%;
+            background-color: v.$pay_button;
             
         }
         
@@ -47,6 +52,9 @@ background-color: v.$primary_bg; ;
             display: flex;
             align-items: center;
         justify-content: center;
+            @include m.desktop{
+                width: 90%;
+            }
         }
     }
 }
