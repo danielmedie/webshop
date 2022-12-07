@@ -16,8 +16,8 @@ body{
 
     #contact {
         background-color: #7D869C;
-        font-size: 22px;
-        height: 62vh;
+        font-size: 12px;
+        height: 30vh;
         width: 100%;
         margin-bottom: 0;
         #footer-container {
@@ -30,8 +30,9 @@ body{
             margin-right: 0;
             #image-container{
                 margin-left: 0;
-                width: 55%;
-                height: 100%    ;
+                width: 45%;
+                // height: 200px;  
+                margin-top: 5%  ;
                 // border: 1px solid #7D869C;
                 #footer-img{
                     width: 100%;
@@ -42,7 +43,9 @@ body{
                 }
             }
             .contact__adress{
-            margin-top: v.$xlarge;
+            margin-top: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
             align-items: center;
             list-style-type: none;
                 .contact__adress__info{
@@ -51,7 +54,10 @@ body{
                 }
             }
             .contact__social{
-            margin-top: v.$xlarge;
+                padding-left: 10px;
+                padding-right: 10px;
+
+            margin-top: 10px;
             // margin-right: 60px;
             list-style-type: none;
             // margin-left: 40px;
