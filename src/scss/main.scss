@@ -1,4 +1,5 @@
 @use 'variables' as v;
+@use "reviews";
 @use 'mixins' as m;
 
 body{
@@ -88,6 +89,7 @@ body{
             // justify-content: center;
             align-items: center;
             // #copyright_paragraph{
+              margin: 0 auto;
                 
             // }
         }
