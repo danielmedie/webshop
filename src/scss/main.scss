@@ -2,6 +2,7 @@
 @use "reviews";
 
 body{
+    background-color: v.$primary_bg;
     margin: 0;
     width: 100%;
     #contact {
