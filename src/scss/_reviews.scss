@@ -3,12 +3,15 @@
 
 .review__container{
     width: v.$full_width;
+
+background-color: v.$primary_bg; ;
     display: flex;
-        flex-direction: column;
-    padding: v.$xsmall;
-    margin: v.$xsmall;
+    flex-direction: column;
     display:flex;
     align-items: center;
+    padding-top: v.$small;
+    padding-bottom: v.$small;
+    
     &__boxes{
         width: 300px;
         height: v.$xlarge;
@@ -17,7 +20,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: v.$xsmall;
         margin: v.$xsmall;
+        
         &__reviews{
             color: v.$secundary_color;
             width: 250px;
