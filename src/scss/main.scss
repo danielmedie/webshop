@@ -272,6 +272,33 @@ body{
         }
     }
     @include m.desktop {
+        #home{
+            header{    
+            .hamburger {
+                display: none;
+              }
+                .nav {
+                  transition: none;
+                  transform: scale(1);
+                  .nav-wrapper{
+                    .nav__wrapper__nav {
+                    display: flex;
+                    justify-content: start;
+                    gap: v.$medium;
+                    height: 45px;
+                    text-align: center;
+                    align-items: center;
+                    padding: 15px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    .nav__wrapper__nav--a {
+                      font-size: v.$medium;
+                      }
+                    }   
+                  }
+                }
+              }
+            }
+
         // display: flex;
         // flex-direction: column;
             #contact {
