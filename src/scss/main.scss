@@ -53,6 +53,24 @@ body{
               overflow: hidden;
               transition: all 0.3s ease-in-out;
               transform: scale(0);
+              #name-header{
+                    display: block;
+                margin: 0;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+                // padding-left: 19px;
+                // font-size: 32px;
+                @include m.desktop {
+
+                    margin: 0;
+                    align-items: center;
+                    text-align: center;
+                    justify-content: center;
+                    padding-left: 19px;
+                    font-size: 32px;
+                }
+            }
               .nav-wrapper {
                 position: relative;
                 overflow: hidden;
@@ -62,14 +80,6 @@ body{
                   text-align: center;
                   padding-top: 25px;
                   background-color: rgba(255, 255, 255, 0.163);
-                  #name-header{
-                    margin: 0;
-                    align-items: center;
-                    text-align: center;
-                    justify-content: center;
-                    padding-left: 19px;
-                    font-size: 32px;
-                }
                   .nav__wrapper__nav--a {
                     position: relative;
                     text-decoration: none;
