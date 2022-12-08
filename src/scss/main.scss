@@ -8,15 +8,23 @@ body{
     width: 100%;    
     #home{
         height: 10vh;
-        // display: flex;
-        // justify-content: center;
+        display: flex;
+        justify-content: center;
         // flex-wrap: wrap;
+        #name-header{
+            margin: 0;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            padding-top: 30px;
+            font-size: 32px;
+        }
+        background-color: #7D869C;
         header{
         //   background-image: v.$hero_image;
         //   background-size: cover;
         //   background-repeat: no-repeat;
         //   background-position: center;
-        background-color: #7D869C;
           height: v.$full_height;
           width: v.$full_width;
         //   margin: 0;
