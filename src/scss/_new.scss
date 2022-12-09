@@ -59,4 +59,21 @@
             font-size: larger;
         }
     }
+    .new-in__container__box__desktop{
+        display: none;
+        &__box__title__desktop{
+        width: 25%;
+        height:500px;
+        background-color: v.$my_purple;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px;
+        }
+        @include m.desktop{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+    }
 }
