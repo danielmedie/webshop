@@ -77,6 +77,12 @@ body{
                   padding-top: 25px;
                   background-color: rgba(255, 255, 255, 0.163);
 
+                  #dropdown-products {
+
+                    // display: flex;
+                    text-align: center;
+                  }
+
                   #dropdown-products:hover .dropdown-content {
                     display: flex;
                   }
@@ -94,13 +100,17 @@ body{
                     background-color: #7d869c77;
                     color: white;
                     font-size: 22px;
+                    text-align: center;
                     flex-wrap: wrap;
                     // height: auto;
                     width: 100%;
                   }
                   .dropdown-content__products{
                     display: flex;
-                    width: 50%;
+                    // width: 50%;
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
                   }
                   
                   .nav__wrapper__nav--a {
