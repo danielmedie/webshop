@@ -2,10 +2,59 @@
 @use "mixins" as m;
 
 .new-in__header{
+    width: 100%;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
     &__title{
         display: flex;
     justify-content: center;
     color: v.$my_lilac;
+    }
+}
+.new-in__container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: v.$primary_bg;
+    &__box{
+        width: 70%;
+        height:500px;
+        background-color: blue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px;
+        &__title{
+            margin: 0 auto;
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            margin-top: 5%;
+            font-size: large;
+        }
+        &__description{
+            margin: 25px;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align:left;
+        }
+        &__image{
+            margin: 0 auto;
+            width: 60%;
+            height: 60%;
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+        }
+        &__price{
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
     }
 }
