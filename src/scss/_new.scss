@@ -22,7 +22,7 @@
     &__box{
         width: 70%;
         height:500px;
-        background-color: blue;
+        background-color: v.$my_purple;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -38,6 +38,7 @@
         &__description{
             margin: 25px;
             width: 80%;
+            margin-left: 15%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -55,6 +56,7 @@
             margin: 0 auto;
             display: flex;
             justify-content: center;
+            font-size: larger;
         }
     }
 }
