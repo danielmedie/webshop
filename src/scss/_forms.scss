@@ -1,8 +1,26 @@
 @use "variables" as v;
 @use "mixins" as m;
 
-form {
+#Shipping-form {
     text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#billing-form {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flexbox-5050 {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    
 }
 input::placeholder {
     color: v.$secundary_color;
@@ -11,5 +29,17 @@ input {
     background-color: v.$input_bgcolor;
     width: 70%;
 }
-
+fieldset {
+    width: 80%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+// fieldset {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     align-items: center;
+// }
 
