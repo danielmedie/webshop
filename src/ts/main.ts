@@ -1,61 +1,61 @@
 import { Product } from "./models/Product";
 
 let painting1 = {
-    title: "John",
-    description: "Doe",
-    price: 50,
+    title: "Syntetiska penslar bundle",
+    description: "Eaque, consequuntur a expedita odit vero blanditiis autem explicabo nisi.",
+    price: 300,
     imgURL: "..."
 };
 
 let painting2 = {
-    title: "John",
-    description: "Doe",
-    price: 70,
-    imgURL: "..."
-};
-let painting3 = {
-    title: "John",
-    description: "Doe",
-    price: 50,
+    title: "En sommardröm",
+    description: "Eaque, consequuntur a expedita odit vero blanditiis autem explicabo nisi",
+    price: 2600,
     imgURL: "..."
 };
 
+let painting3 = {
+    title: "Akvarellset",
+    description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
+    price: 300,
+    imgURL: "src\assets\image-from-rawpixel-id-6439835-original.png"
+};
 let painting4 = {
-    title: "John",
-    description: "Doe",
-    price: 70,
+    title: "Vårblommor",
+    description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
+    price: 1900,
     imgURL: "..."
 };
 let painting5 = {
-    title: "John",
-    description: "Doe",
-    price: 50,
+    title: "Canvas i bomull",
+    description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
+    price: 350,
     imgURL: "..."
 };
 
 let painting6 = {
-    title: "John",
-    description: "Doe",
-    price: 70,
+    title: "Kyssen",
+    description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
+    price: 8800,
     imgURL: "..."
 };
 let painting7 = {
-    title: "John",
-    description: "Doe",
-    price: 50,
+    title: "Mona Lisa",
+    description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
+    price: 25000,
     imgURL: "..."
 };
 
 let painting8 = {
-    title: "John",
-    description: "Doe",
-    price: 70,
-    imgURL: "..."
+    title: "Summer in Italy",
+    description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
+    price: 900,
+    imgURL: ''
 };
 
 
 
-let products: Product[] = [painting1, painting2]
+let products: Product[] = [painting1, painting2, painting3, painting4, painting5, painting6 ,painting7, painting8]
 let section: HTMLDivElement = document.getElementById('new-in__container') as HTMLDivElement
 
 
@@ -74,10 +74,16 @@ for (let i = 0; i < products.length; i++) {
 
     section.appendChild(art)
 
+    art.className = 'new-in__container__box'
+    pTitle.className = 'new-in__container__box__title'
+    img.className = 'new-in__container__box__image'
+    pDescription.className = 'new-in__container__box__description'
+    pPrice.className = 'new-in__container__box__price'
+
     pTitle.innerHTML = products[i].title
     img.src = products[i].imgURL
     pDescription.innerHTML = products[i].description
-    pPrice.innerHTML = products[i].price.toString()
+    pPrice.innerHTML = products[i].price.toString() + ' kr'
 
 }
 
