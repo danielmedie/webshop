@@ -4,7 +4,18 @@ let addCartItemButtons: HTMLButtonElement = document.getElementsByClassName ("ad
 //addCartItemButton.innerHTML = "+";
 let deleteCartItemButtons: HTMLButtonElement = document.getElementsByClassName ("subOneItem") as unknown as HTMLButtonElement;
 //deleteCartItemButton.innerHTML = "-";
-let checkoutCartItemButtons: HTMLButtonElement = document.getElementsByClassName("deleteAllItems") as unknown as HTMLButtonElement;
+let deleteItemButtons: HTMLButtonElement = document.getElementsByClassName("deleteAllItems") as unknown as HTMLButtonElement;
+let checkoutCartButtons : HTMLButtonElement = document.getElementsByClassName("checkoutCart") as unknown as HTMLButtonElement;
+let products : any = document.querySelectorAll(".product");
+
+products.forEach(products =>{
+    product.addEventListener("click", e=>{
+        if(e.target.classList.contains("addToCart")){
+
+        }
+    });
+});
+
 
 //checkoutCartItemButton.innerHTML = "Gå till kassan";
 
