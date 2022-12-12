@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./scss/main.scss">
     <script src="./ts/main.ts" typ="module"></script>
-    <script src="./ts/models/basket.ts" typ="module"></script>
+    <script src="./ts/models/basket.ts" typ="module" async></script>
     <title>Studio Ink</title>
     <script src="https://kit.fontawesome.com/bc5eefc1c7.js" crossorigin="anonymous"></script>
 
@@ -43,9 +43,17 @@
         </header>
     </section>
     <section class="basket">
-        <button class ="plusItem"></button>
+        <h3 class="basket__title">Varukorg</h3>
+        <section class="basket__items">
+            <section class="basket__items--item"></section>
+            <button class="addOneItem" type="button">+</button>
+            <button class="subOneItem" type="button">-</button>
+            <button class="deleteAllItems" type="button">Remove all</button>
+            <button class="checkoutCart" type="button">Gå till kassan</button>
+        </section>
+        <!-- <button class ="plusItem"></button>
         <button class="deleteItem"></button>
-        <button class="checkoutCart"></button>
+        <button class="checkoutCart"></button> -->
     </section>
     <section class="new-in__header">
         <h2 class="new-in__header__title">Nyligen inkommet</h2>
