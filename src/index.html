@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./scss/main.scss">
     <script src="./ts/main.ts" typ="module"></script>
-    <script src="./ts/models/basket.ts" typ="module" async></script>
+    <script src="./ts/models/basket.ts" typ="module" async type="module" defer></script>
     <title>Studio Ink</title>
     <script src="https://kit.fontawesome.com/bc5eefc1c7.js" crossorigin="anonymous"></script>
 
@@ -26,17 +26,16 @@
                         <a class="nav__wrapper__nav--a" href="#home">Hem</a><br>
                     <a class="nav__wrapper__nav--a" href="#about">Om</a><br>
                     <div id="dropdown-products">
-                    <a class="nav__wrapper__nav--a" href="#products">Våra produkter
+                    <a class="nav__wrapper__nav--a">Våra produkter
                     <div class="dropdown-content">
-                        <a class="dropdown-content__products" href="">TEST</a>
-                        <a class="dropdown-content__products" href="">TEST</a>
-                        <a class="dropdown-content__products" href="">TEST</a>
+                        <a class="dropdown-content__products" href="">ARTIST</a>
+                        <a class="dropdown-content__products" href="">PAINTINGS</a>
+                        <a class="dropdown-content__products" href="">MATERIAL</a>
                     </div>
                     </a>
                 </div>
                     <br>
                     <a class="nav__wrapper__nav--a" href="#contact">Kontakt</a><br>
-                    <p id="name-header">StudioInk</p>
                     </nav>
                 </div>
             </div>
@@ -58,7 +57,7 @@
     <section class="new-in__header">
         <h2 class="new-in__header__title">Nyligen inkommet</h2>
     </section>
-    <section class="new-in__container">
+    <section class="new-in__container" id="new-in__container">
         <article class="new-in__container__box">
             <p class="new-in__container__box__title">Syntetiska penslar bundle</p>
                     <img class="new-in__container__box__image">
@@ -158,7 +157,7 @@
         <ul class="contact__adress">
             <h3>Contact</h3>
             <li class="contact__adress__info">073-123 45 67</li>
-            <li class="contact__adress__info">kundserice@studioink.se</li>
+            <li class="contact__adress__info">kundservice@studioink.se</li>
             <li class="contact__adress__info">Chatt</li>
         </ul>
         <ul class="contact__social">

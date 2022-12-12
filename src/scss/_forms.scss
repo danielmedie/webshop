@@ -1,0 +1,15 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+form {
+    text-align: center;
+}
+input::placeholder {
+    color: v.$secundary_color;
+}
+input {
+    background-color: v.$input_bgcolor;
+    width: 70%;
+}
+
+

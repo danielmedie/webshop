@@ -1,3 +1,4 @@
+import { Product } from "./Product";
 let theCart = [];
 
 let addCartItemButtons: HTMLButtonElement = document.getElementsByClassName ("addOneItem") as unknown as HTMLButtonElement;
@@ -6,15 +7,14 @@ let deleteCartItemButtons: HTMLButtonElement = document.getElementsByClassName (
 //deleteCartItemButton.innerHTML = "-";
 let deleteItemButtons: HTMLButtonElement = document.getElementsByClassName("deleteAllItems") as unknown as HTMLButtonElement;
 let checkoutCartButtons : HTMLButtonElement = document.getElementsByClassName("checkoutCart") as unknown as HTMLButtonElement;
-let products : any = document.querySelectorAll(".product");
 
-products.forEach(products =>{
-    product.addEventListener("click", e=>{
-        if(e.target.classList.contains("addToCart")){
+// products.forEach(products =>{
+//     product.addEventListener("click", e=>{
+//         if(e.target.classList.contains("addToCart")){
 
-        }
-    });
-});
+//         }
+//     });
+// });
 
 
 //checkoutCartItemButton.innerHTML = "Gå till kassan";
