@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./scss/main.scss">
-    <script src="./ts/main.ts"></script>
+    <script src="./ts/main.ts" type="module" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -66,35 +66,19 @@
               <input id="City" name="City" type="text" placeholder="City*"> <br> 
               <input id="Address" name="Address" type="text" placeholder="Address*"> <br>
               <input id="Zip-code" name="Zip-code" type="number" placeholder="Zip code*"> <br>
-
-         
+             </fieldset>
+          </form>
+          <form id="billing-form">
+            <fieldset>
+              <legend>Payment</legend>
+              <input id="card-number" name="card-number" type="number" placeholder="Card nr: 1234 5678 9123 4567"> <br>
+            <div class="flexbox-5050">
+              <input id="expiration-date" name="expiration-date" type="number" placeholder="Exp-date*">
+              <input id="CVC/CVV" name="CVC/CVV" type="number" placeholder="CVC/CVV*">
+            </div>
+              
         <p>
-                Gender :
-                <label><input type="radio" name="gender" value="male" /> Male</label>
-                <label><input type="radio" name="gender" value="female" /> Female</label>
-              </p>
-               
-         
-        <p>
-                <label>Date of Birth:<input type="date" name="birthDate"></label>
-              </p>
-         
-         
-               
-         
-        <p>
-                <label>
-                  Address :
-                  <br />
-                  <textarea name="address" cols="30" rows="3"></textarea>
-                </label>
-              </p>
-         
-         
-               
-         
-        <p>
-                <button type="submit">Submit</button>
+                <button type="submit">Pay</button>
               </p>
          
          

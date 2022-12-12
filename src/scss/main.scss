@@ -2,6 +2,7 @@
 @use "reviews";
 @use "new";
 @use 'mixins' as m;
+@use 'forms';
 
 body{
     background-color: v.$primary_bg;
