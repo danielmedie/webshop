@@ -16,7 +16,20 @@ body{
       header{
         height: v.$full_height;
         width: v.$full_width;
-        
+        .shoppingCart{
+          width: 90%;
+          height: 20px;
+          margin-right: 20px;
+          #shoppingCartIcon{
+            width:100%;
+            height: 100%;
+            line-height: 1.5;
+            font-size: 3em;
+            display: flex;
+          justify-content: right;
+          color: white;
+          }
+        }
         #toggle {
           display: none;
         }
@@ -138,7 +151,7 @@ body{
                   }
                 }
               }
-            } 
+            }
   
             /**Animations**/
   

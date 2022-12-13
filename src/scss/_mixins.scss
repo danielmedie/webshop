@@ -5,3 +5,10 @@
         @content;
     }
 }
+
+@mixin shoppingCart{
+    .bi_bi-cart{
+        width: 10px;
+        height:10px;
+    }
+}
