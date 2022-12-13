@@ -4,7 +4,7 @@ let painting1 = {
     title: "Syntetiska penslar bundle",
     description: "Eaque, consequuntur a expedita odit vero blanditiis autem explicabo nisi.",
     price: 300,
-    imgURL: "..."
+    imgURL: "/assets/fagel.png"
 };
 
 let painting2 = {
@@ -50,7 +50,7 @@ let painting8 = {
     title: "Summer in Italy",
     description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
     price: 900,
-    imgURL: ''
+    imgURL: '../assets/fagel.png'
 };
 
 
@@ -80,10 +80,11 @@ for (let i = 0; i < products.length; i++) {
     pDescription.className = 'new-in__container__box__description'
     pPrice.className = 'new-in__container__box__price'
 
-    pTitle.innerHTML = products[i].title
-    img.src = products[i].imgURL
-    pDescription.innerHTML = products[i].description
-    pPrice.innerHTML = products[i].price.toString() + ' kr'
+    pTitle.innerHTML = products[i].title;
+    img.src = products[i].imgURL;
+    img.alt = "Product image";
+    pDescription.innerHTML = products[i].description;
+    pPrice.innerHTML = products[i].price.toString() + ' kr';
 
 }
 
