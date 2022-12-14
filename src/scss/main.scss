@@ -310,11 +310,12 @@ body{
 
                     #our-products:hover .dropdown-content {
                         display: block;
-                        
                     }
                     
                     .dropdown-content {
                         display: hidden;
+                        position: absolute;
+                        // z-index: 40;
                     }
                     
                     .dropdown-content:hover {
