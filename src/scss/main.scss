@@ -2,6 +2,10 @@
 @use "reviews";
 @use "new";
 @use 'mixins' as m;
+html{
+
+
+  scroll-behavior: smooth;
 
 body{
     background-color: v.$primary_bg;
@@ -207,7 +211,6 @@ body{
     }
 
     #contact {
-        background-color: #7D869C;
         font-size: 12px;
         height: 30vh;
         width: 100%;
@@ -220,6 +223,7 @@ body{
             width: 100%;
             margin-bottom: 0;
             margin-right: 0;
+            background-color: #7D869C;
             #image-container{
                 margin-left: 0;
                 width: 35%;
@@ -295,7 +299,7 @@ body{
                     display: flex;
                     justify-content: start;
                     gap: v.$medium;
-                    height: 45px;
+                    height: 100%;
                     text-align: center;
                     align-items: center;
                     padding: 15px;
@@ -427,4 +431,4 @@ body{
             }    
         
     }
-}
+}}

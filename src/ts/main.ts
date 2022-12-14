@@ -4,59 +4,60 @@ let painting1 = {
     title: "Syntetiska penslar bundle",
     description: "Eaque, consequuntur a expedita odit vero blanditiis autem explicabo nisi.",
     price: 300,
-    imgURL: "/assets/fagel.png"
+    imgURL: "https://img.cdn-pictorem.com/uploads/puzzle/1/puzzle1_212840.jpg"
 };
 
 let painting2 = {
     title: "En sommardröm",
     description: "Eaque, consequuntur a expedita odit vero blanditiis autem explicabo nisi",
     price: 2600,
-    imgURL: "..."
+    imgURL: "https://img.cdn-pictorem.com/uploads/puzzle/1/puzzle1_212840.jpg"
 };
 
 let painting3 = {
     title: "Akvarellset",
     description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
     price: 300,
-    imgURL: "src\assets\image-from-rawpixel-id-6439835-original.png"
+    imgURL: "https://img.cdn-pictorem.com/uploads/puzzle/1/puzzle1_212840.jpg"
 };
 let painting4 = {
     title: "Vårblommor",
     description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
     price: 1900,
-    imgURL: "..."
+    imgURL: "https://img.cdn-pictorem.com/uploads/puzzle/1/puzzle1_212840.jpg"
 };
 let painting5 = {
     title: "Canvas i bomull",
     description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
     price: 350,
-    imgURL: "..."
+    imgURL: "https://img.cdn-pictorem.com/uploads/puzzle/1/puzzle1_212840.jpg"
 };
 
 let painting6 = {
     title: "Kyssen",
     description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
     price: 8800,
-    imgURL: "..."
+    imgURL: "https://img.cdn-pictorem.com/uploads/puzzle/1/puzzle1_212840.jpg"
 };
 let painting7 = {
     title: "Mona Lisa",
     description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
     price: 25000,
-    imgURL: "..."
+    imgURL: "https://img.cdn-pictorem.com/uploads/puzzle/1/puzzle1_212840.jpg"
 };
 
 let painting8 = {
     title: "Summer in Italy",
     description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
     price: 900,
-    imgURL: '../assets/fagel.png'
+    imgURL: 'https://img.cdn-pictorem.com/uploads/puzzle/1/puzzle1_212840.jpg'
 };
 
 
 
 let products: Product[] = [painting1, painting2, painting3, painting4, painting5, painting6 ,painting7, painting8]
 let section: HTMLDivElement = document.getElementById('new-in__container') as HTMLDivElement
+let selectionDesktop: HTMLDivElement = document.getElementById('new-in__container') as HTMLDivElement
 
 
 for (let i = 0; i < products.length; i++) {
@@ -73,6 +74,7 @@ for (let i = 0; i < products.length; i++) {
     art.appendChild(pPrice)
 
     section.appendChild(art)
+    selectionDesktop.appendChild(art)
 
     art.className = 'new-in__container__box'
     pTitle.className = 'new-in__container__box__title'
@@ -88,4 +90,13 @@ for (let i = 0; i < products.length; i++) {
 
 }
 
-console.log(section);
+ let removeCartItems : HTMLCollection = document.getElementsByClassName('remove-item-btn') as HTMLCollection
+
+
+for (let i = 0; i < removeCartItems.length; i++) {
+    let remove = removeCartItems[i];
+    remove.addEventListener('click', function (event) {
+        let buttonClicked = event.target
+        // buttonClicked.parent
+    })
+}
