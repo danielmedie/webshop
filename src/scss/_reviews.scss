@@ -5,8 +5,12 @@
     background-color: v.$primary_bg;
     display: flex;
     justify-content: center;
-    margin-top: 200px;
-    margin-bottom: 200px;
+    margin-top: 15vh;
+    margin-bottom: 1vh;
+    @include m.desktop{
+        margin-top: 20vh;
+        margin-bottom: 5vh;
+    }
     #title__color{
         color: v.$my_lilac;
     }
@@ -17,15 +21,16 @@
     background-color: v.$primary_bg;
     display: flex;
     flex-direction: column;
-    // flex-wrap: wrap;
     align-items: center;
     padding-top: v.$small;
     padding-bottom: v.$small;
+    margin-bottom: 15vh;
+    gap: 1em;
     @include m.desktop{
         flex-wrap: wrap;
         justify-content: center;
         flex-direction: row;
-        //flex-wrap: wrap;
+        gap: 2em;
     }
     &__boxes{
         width: 300px;
@@ -41,6 +46,7 @@
             display: wrap;
             width:40%;
             background-color: v.$pay_button;
+            padding:2em;
             
         }
         

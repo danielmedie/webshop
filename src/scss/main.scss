@@ -164,52 +164,66 @@ body{
             }
         }
     } 
+
+  .about__container{
+        height: 100%;
+        background-color: #586994;
+        font: 16px;
+        padding: 30px;
+        padding-top: 10%;
+        padding-bottom:10%;
+        margin-top: 20%;
+        margin-bottom: 15%;
+        
+        
+        @include m.desktop {
+            background-color: #A2ABAB;
+            color: #586994;
+            margin-top: 8%;
+            padding-top: 10%;
+            padding-bottom: 7%;
+            
+        }
     #om-oss_head {
         text-align: center;
         color: #A2ABAB;
+        
         
         
         @include m.desktop {
             color: #B4C4AE;
         }
 
-    }
-    #logo-container {
-        display: none;
-    }
-    #flexbox-om-oss {
-        @include m.desktop {
-            display: flex;
-            margin: 40px;
-            width: 80%;
+          #logo-container {
+              display: none;
+          
+    
+            @include m.desktop {
+              
+              margin-left: 0;
+              margin-right: 30px;
+              margin-top: 17px;
+              width: 100%;
+              padding: 10px;
+              display: flex;
+              gap: 50px;
             
-            // .paragraph {
-            //     margin: 20px;
-                
-                
-            // }
-        #logo-container{
-            margin-left: 0;
-            margin-right: 30px;
-            margin-top: 20px;
-            width: 200%;
-            
-        
+                #om-oss__image{
+                  padding: 10px;
+                  
+                }
+                .paragraph{
+                  padding: 20px;
+                    p{
+                      padding:20px;
+                    }
+                  }
+              
         }
-        }
+      
     }
-    #om-oss {
-        height: 100%;
-        background-color: #586994;
-        font: 16px;
-        padding: 30px;
-        
-        @include m.desktop {
-            background-color: #A2ABAB;
-            color: #586994;
-            
-        }
-    }
+  }
+}
 
     #contact {
         font-size: 12px;
@@ -341,14 +355,19 @@ body{
             #logo-container{
               display: flex;
               flex-direction: row;
+              gap: 50px;
+              
               // justify-content: end;
         #om-oss__image{
-                    width: 100%;
+                    width: 200%;
                     // height: 200px;
                     background-size: contain;
                     background-position: center;
                     background-repeat: no-repeat;
                     background-image: url('../assets/logotype.png');
+                    padding-bottom: 30vh;
+                    display:flex;
+                    align-items: flex-start;
                 }
             }
     
