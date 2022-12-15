@@ -4,53 +4,53 @@ let painting1 = {
     title: "Syntetiska penslar bundle",
     description: "Eaque, consequuntur a expedita odit vero blanditiis autem explicabo nisi.",
     price: 300,
-    imgURL: "https://images.tctc.se/nmp1vq8c1nu84kgsex6mbr9dse0aareo.jpg"
+    imgURL: "https://i.imgur.com/4KpavDq.jpg"
 };
 
 let painting2 = {
     title: "En sommardröm",
     description: "Eaque, consequuntur a expedita odit vero blanditiis autem explicabo nisi",
     price: 2600,
-    imgURL: "https://www.annakarolina.se/wp-content/uploads/2021/11/Tavla_EnSommardrom_jpg.jpg"
+    imgURL: "https://i.imgur.com/qVZbRew.jpg"
 };
 
 let painting3 = {
-    title: "Akvarellset",
+    title: "Blommor",
     description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
     price: 300,
-    imgURL: "https://penstore.se/bilder/artiklar/zoom/106250_1.jpg?m=1598348763"
+    imgURL: "https://i.imgur.com/etBrsnr.jpg"
 };
 let painting4 = {
-    title: "Vårblommor",
+    title: "Earth",
     description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
     price: 1900,
-    imgURL: "https://www.ikea.com/se/sv/images/products/bild-utslagna-blommor__0475243_pe615499_s5.jpg?f=s"
+    imgURL: "https://i.imgur.com/Odg2LBb.jpg"
 };
 let painting5 = {
-    title: "Canvas i bomull",
+    title: "Cold sky",
     description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
     price: 350,
-    imgURL: "https://static.panduro.com/ArticleImages/310x310/190054_01.jpg"
+    imgURL: "https://i.imgur.com/ptvOZZj.jpg"
 };
 
 let painting6 = {
     title: "Kyssen",
     description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
     price: 8800,
-    imgURL: "https://stockholm87.files.wordpress.com/2013/09/the-kiss-19081.jpg"
+    imgURL: "https://i.imgur.com/pTsJGO1.jpg"
 };
 let painting7 = {
     title: "Mona Lisa",
     description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
     price: 25000,
-    imgURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/1200px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
+    imgURL: "https://i.imgur.com/PMhRVTo.jpg"
 };
 
 let painting8 = {
     title: "Summer in Italy",
     description: "Architecto minus laudantium consequatur quisquam accusantium voluptates hic quas aspernatur consectetur error!",
     price: 900,
-    imgURL: 'https://gretastravels.com/wp-content/uploads/2021/07/IMG-2490.jpg'
+    imgURL: 'https://i.imgur.com/HXCuzXZ.jpg'
 };
 
 
