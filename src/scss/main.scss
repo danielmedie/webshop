@@ -346,7 +346,13 @@ button {
     }
 // ----------------------checkout page-------------------------------------------
 
-
+h2 {
+  display: flex;
+justify-content: center;
+color: v.$my_lilac;
+margin-top: 5vh;
+margin-bottom: 10vh;
+}
     @include m.desktop {
         #home{
             position: relative;
