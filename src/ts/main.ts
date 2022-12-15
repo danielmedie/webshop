@@ -84,7 +84,7 @@ for (let i = 0; i < products.length; i++) {
     // selectionDesktop.appendChild(art)
 
 
-    button.innerHTML = 'buy'
+    button.innerHTML = 'Köp'
     button.className = 'shop-items-button'
 
     art.className = 'new-in__container__box'
@@ -127,7 +127,7 @@ for (let i = 0; i < productsDesktop.length; i++) {
     pPrice.className = 'new-in__container__desktop__box__price'
     button.className = 'shop-items-button'
     
-    button.innerHTML = 'buy'
+    button.innerHTML = 'Köp'
     pTitle.innerHTML = products[i].title;
     img.src = products[i].imgURL;
     img.alt = "Product image";
@@ -165,7 +165,7 @@ for (let i = 0; i <addToCartButtons.length; i++) {
 document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchasedClick)
 
 function purchasedClick() {
-    alert('Thank you for the purchase')
+    alert('Tack för ditt köp')
     let cartItems: any = document.getElementsByClassName('cart-itmes')[0]
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
@@ -198,14 +198,14 @@ updateCartTotal()
 
 function addItemsToCart (title : string, price : number, imgSrc : string) {
     let cartRow = document.createElement('div')
-    cartRow.innerText = `${title} " " ${price.toString()} " " ${imgSrc}`
+    cartRow.innerText = `${title} ${price.toString()} ${imgSrc}`
 
     let cartItems = document.getElementsByClassName('items-preview')[0]
     console.log(cartItems);
     let cartItemsNames = cartItems.getElementsByClassName('new-in__container__box__title')
     for (let i = 0; i < cartItemsNames.length; i++) {
         if (cartItemsNames[i].innerHTML == title) {
-            alert('this item is alredy added to the cart')
+            alert('Denna produkt är finns redan i varukorgen')
         }
         return
     }
