@@ -187,6 +187,7 @@ body{
     #landing-img_container{
       height: 60vh;
       width: 100%;
+      
       #landing-img{
           width: 100%;
           height: 100%;
@@ -204,11 +205,9 @@ body{
         height: 100%;
         background-color: #586994;
         font: 16px;
-        padding: 30px;
-        padding-top: 10%;
-        padding-bottom:10%;
+        padding: 6em;
         margin-top: 20%;
-        margin-bottom: 15%;
+        text-align: left;
         
         
         @include m.desktop {
@@ -266,7 +265,17 @@ body{
     }
   }
 }
-
+button {
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      background-color: v.$secundary_color;
+      // border: v.$main_color;
+      color: v.$main_color;
+}
     #contact {
         font-size: 12px;
         width: 100%;

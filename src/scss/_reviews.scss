@@ -5,7 +5,7 @@
     background-color: v.$primary_bg;
     display: flex;
     justify-content: center;
-    margin-top: 15vh;
+    margin-top: 10vh;
     margin-bottom: 1vh;
     @include m.desktop{
         margin-top: 20vh;
@@ -24,8 +24,8 @@
     align-items: center;
     padding-top: v.$small;
     padding-bottom: v.$small;
-    margin-bottom: 15vh;
-    gap: 1em;
+    margin-bottom: 10vh;
+    gap: 3em;
     @include m.desktop{
         flex-wrap: wrap;
         justify-content: center;
