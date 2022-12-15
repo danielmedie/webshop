@@ -135,3 +135,15 @@ for (let i = 0; i < removeCartItems.length; i++) {
         // buttonClicked.parent
     })
 }
+
+
+/*--------------------------------------------------------------------------------------------------------*/
+
+
+
+// let CartItems : HTMLCollection = document.getElementsByClassName('items-preview') as HTMLCollection
+
+function previewItems() {
+
+}
+
