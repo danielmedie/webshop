@@ -17,7 +17,7 @@ let painting2 = {
 
 
 
-let products: Product[] = [painting1, painting2]
+let products: Product[] = [painting1]
 
 let section: HTMLDivElement = document.getElementById('new-in__container') as HTMLDivElement
 let selectionDesktop: HTMLDivElement = document.getElementById('new-in__container__desktop') as HTMLDivElement
