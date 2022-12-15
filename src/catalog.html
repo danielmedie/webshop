@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="scss/_catalog.scss" rel="stylesheet">
     <link href="scss/main.scss" rel="stylesheet">
+    <script src="ts/main.ts" type="module" defer></script>
+    <script src="https://kit.fontawesome.com/bc5eefc1c7.js" crossorigin="anonymous" type="module" ></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <title>StudioInk</title>
 </head>
 <body>
@@ -23,11 +26,11 @@
                             <a class="nav__wrapper__nav--a" href="index.html">Hem</a><br>
                         <a class="nav__wrapper__nav--a" href="#about">Om</a><br>
                         <div id="dropdown-products">
-                        <a class="nav__wrapper__nav--a">Våra produkter
+                        <a class="nav__wrapper__nav--a"  href="catalog.html">Våra produkter
                         <div class="dropdown-content">
-                            <a class="dropdown-content__products" href="">ARTIST</a>
-                            <a class="dropdown-content__products" href="">PAINTINGS</a>
-                            <a class="dropdown-content__products" href="">MATERIAL</a>
+                            <a class="dropdown-content__products" href="artist.html">ARTIST</a>
+                            <a class="dropdown-content__products" href="paintings.html">PAINTINGS</a>
+                            <a class="dropdown-content__products" href="material.html">MATERIAL</a>
                         </div>
                         </a>
                     </div>
@@ -42,6 +45,8 @@
             <h2 class="container__title">Våra produkter</h2>
             <section class="container__products"></section>
         </section>
+        <section class="new-in__container" id="new-in__container"></section>
+        <section class="new-in__container__desktop" id="new-in__container__desktop"></section>
 
         <footer id="contact">
             <section id="footer-container">
