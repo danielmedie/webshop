@@ -174,7 +174,6 @@ body{
     
     .shoppingcart-icon:hover {
       color: #ddd;
-      background-color: #333;
     }
     
     .shoppingcart-text {
@@ -203,6 +202,20 @@ body{
             padding-bottom: 7%;
             
         }
+.landing-page 
+    {
+    width: 100%;
+    height: 100vh;
+    
+  }
+        #landing_img {
+            background-image: url("https://cdn.shopify.com/s/files/1/0054/2887/1268/files/12121212.jpg?v=1616063044");
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+}
+
+    // }
     #om-oss_head {
         text-align: center;
         color: #A2ABAB;
