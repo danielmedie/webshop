@@ -142,6 +142,8 @@ for (let i = 0; i < productsDesktop.length; i++) {
 
 let removeCartItemsButton : HTMLCollection = document.getElementsByClassName('remove-item-btn') as HTMLCollection
 
+let cart : HTMLCollectionElement = [];
+
 function removeCartItems(event:any) {
     let buttonClicked = event.target
     buttonClicked.parentElement.remove()
@@ -170,7 +172,8 @@ function purchasedClick() {
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
-    updateCartTotal()
+    updateCartTotal();
+    
 }
 
 function addToCart(event:any) {
@@ -195,21 +198,22 @@ addItemsToCart (title, price, imgSrc)
 updateCartTotal()
 
 }
+function displayHTML(){
+    
+}
+let cartItems = document.getElementsByClassName('items-preview')[0]
+console.log(cartItems);
+let cartItemsNames = cartItems.getElementsByClassName('new-in__container__box__title')
 
 function addItemsToCart (title : string, price : number, imgSrc : string) {
     let cartRow = document.createElement('div')
     cartRow.innerText = `${title} ${price.toString()} ${imgSrc}`
-
-    let cartItems = document.getElementsByClassName('items-preview')[0]
-    console.log(cartItems);
-    let cartItemsNames = cartItems.getElementsByClassName('new-in__container__box__title')
     for (let i = 0; i < cartItemsNames.length; i++) {
         if (cartItemsNames[i].innerHTML == title) {
             alert('Denna produkt är finns redan i varukorgen')
         }
         return
     }
-    
     cartItems.append(cartRow)
 }
 function updateCartTotal() {
@@ -222,7 +226,31 @@ function updateCartTotal() {
     }
     
 }
-
+function updateCart(event){
+    event.preventDefault();
+    let addedItem = new Product (cartItems.value);
+    if (localStorage.value === ""){
+        alert: string ("Din varukorg är tom");
+        return false;
+    } else{
+        cart.push(addedItem);
+        saveToLocalStorage();
+        displayHTML();
+        input.value = "";
+    }
+}
+function saveToLocalStorage(){
+    let myLS = JSON.stringify(cart);
+    localStorage.setItem("cart", myLS);
+}
+const getFromLocalStorage = () => {
+    if (localStorage.getItem("cart") === null || "") {
+      cart = "";
+    } else {
+      cart = JSON.parse(localStorage.getItem("cart"));
+    }
+    displayHTML();
+  };
 /*--------------------------------------------------------------------------------------------------------*/
 
 
