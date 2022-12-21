@@ -220,40 +220,15 @@ function updateCartTotal() {
         let cartRow =cartRows[i];
         let priceElement = products[i].price
     }
-    
+
 }
-function updateCart(event){
-    event.preventDefault();
-    let addedItem:string = new Product (cartItems.value);
-    if (localStorage.value === ""){
-        alert: string ("Din varukorg är tom");
-        return false;
-    } else{
-        cart.push(addedItem);
-        saveToLocalStorage();
-        displayHTML();
-        input.value = "";
-    }
-}
-function saveToLocalStorage(){
-    let myLS = JSON.stringify(cart);
-    localStorage.setItem("cart", myLS);
-}
-const getFromLocalStorage = () => {
-    if (localStorage.getItem("cart") === null || "") {
-      cart = "";
-    } else {
-      cart = JSON.parse(localStorage.getItem("cart"));
-    }
-    displayHTML();
-  };
+
 /*--------------------------------------------------------------------------------------------------------*/
 
 
 
 // let CartItems : HTMLCollection = document.getElementsByClassName('items-preview') as HTMLCollection
 
-function previewItems() {
+    function previewItems() {
 
-}
-
+    }
