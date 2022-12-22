@@ -60,10 +60,40 @@ let productsDesktop: Product[] = [painting5, painting6 ,painting7, painting8]
 
 let section: HTMLDivElement = document.getElementById('new-in__container') as HTMLDivElement
 let selectionDesktop: HTMLDivElement = document.getElementById('new-in__container__desktop') as HTMLDivElement
+let itemsPreview: HTMLDivElement = document.getElementById('items-preview') as HTMLDivElement
 
+if (!localStorage.getItem('cart')) {
+    localStorage.setItem('cart', JSON.stringify([]))
+  }
 
-for (let i = 0; i < products.length; i++) {
+  let addToCart = (product: Product) => {
+    let cart = JSON.parse(localStorage.getItem('cart') || '[]')
+    cart.push(product)
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }
 
+  const displayCartItems = () => {
+    let cart = JSON.parse(localStorage.getItem('cart') || '[]')
+    if (cart.length > 0) {
+      itemsPreview.innerHTML = ''
+      for (let i = 0; i < cart.length; i++) {
+        let product = cart[i]
+        let productDiv = document.createElement('div')
+        productDiv.innerHTML = `
+          <p>${product.title}</p>
+          <img src="${product.imgURL}" alt="${product.title}" />
+          <p>${product.description}</p>
+          <p>${product.price} SEK</p>
+        `
+        itemsPreview.appendChild(productDiv)
+      }
+    } else {
+      itemsPreview.innerHTML = 'Your cart is empty.'
+    }
+  }
+  
+  for (let i = 0; i < products.length; i++) {
+    let product = products[i]
     let art: HTMLDivElement = document.createElement('div')
     let pTitle: HTMLParagraphElement = document.createElement('p')
     let img: HTMLImageElement = document.createElement('img')
@@ -157,12 +187,12 @@ for (let i = 0; i < removeCartItems.length; i++) {
 
 
 
-let addToCartButtons = document.getElementsByClassName('shop-items-button')
-for (let i = 0; i <addToCartButtons.length; i++) {
-    let button =addToCartButtons[i];
-    button.addEventListener('click', addToCart)
+// let addToCartButtons = document.getElementsByClassName('shop-items-button')
+// for (let i = 0; i <addToCartButtons.length; i++) {
+//     let button =addToCartButtons[i];
+//     button.addEventListener('click', addToCart)
     
-}
+// }
 
 document.getElementsByClassName('shop-items-button')[0].addEventListener('click', purchasedClick)
 
@@ -176,37 +206,37 @@ function purchasedClick() {
     updateCartTotal()
 }
 
-function addToCart(event:any) {
-    let button = event.target
-    let shopItem = button.parentElement
+// function addToCart(event:any) {
+//     let button = event.target
+//     let shopItem = button.parentElement
     
 
-    console.log(shopItem);
+//     console.log(shopItem);
 
-    let title = shopItem.getElementsByClassName('new-in__container__box__title')[0].innerHTML
-
-
-    let price = shopItem.getElementsByClassName('new-in__container__box__price')[0].innerHTML
+//     let title = shopItem.getElementsByClassName('new-in__container__box__title')[0].innerHTML
 
 
-    let imgSrc = shopItem.getElementsByClassName('new-in__container__box__image')[0].src
-
-    console.log(title);
-    console.log(price);
-    console.log(imgSrc);
+//     let price = shopItem.getElementsByClassName('new-in__container__box__price')[0].innerHTML
 
 
-    addItemsToCart (title, price, imgSrc)
-    updateCartTotal()
+//     let imgSrc = shopItem.getElementsByClassName('new-in__container__box__image')[0].src
+
+//     console.log(title);
+//     console.log(price);
+//     console.log(imgSrc);
 
 
-    button.addEventListener('click', localStorage.setItem('title', JSON.stringify(title) ))
-    button.addEventListener('click', localStorage.setItem('price', JSON.stringify(price) ))
-    button.addEventListener('click', localStorage.setItem('imgSrc', JSON.stringify(imgSrc) ))
+//     addItemsToCart (title, price, imgSrc)
+//     updateCartTotal()
 
-    // localStorage.setItem('product', )
 
-}
+//     button.addEventListener('click', localStorage.setItem('title', JSON.stringify(title) ))
+//     button.addEventListener('click', localStorage.setItem('price', JSON.stringify(price) ))
+//     button.addEventListener('click', localStorage.setItem('imgSrc', JSON.stringify(imgSrc) ))
+
+//     // localStorage.setItem('product', )
+
+// }
 
 
 let checkoutArray = []
