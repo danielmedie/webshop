@@ -173,6 +173,7 @@ function purchasedClick() {
         cartItems.removeChild(cartItems.firstChild)
     }
     updateCartTotal();
+    ;
     
 }
 
@@ -198,11 +199,9 @@ addItemsToCart (title, price, imgSrc)
 updateCartTotal()
 
 }
-
 let cartItems = document.getElementsByClassName('items-preview')[0]
 console.log(cartItems);
 let cartItemsNames = cartItems.getElementsByClassName('new-in__container__box__title')
-
 function addItemsToCart (title : string, price : number, imgSrc : string) {
     let cartRow = document.createElement('div')
     cartRow.innerText = `${title} ${price.toString()} ${imgSrc}`
@@ -224,34 +223,7 @@ function updateCartTotal() {
     }
     
 }
-function displayHTML(){
-    
-}
-// function updateCart(event){
-//     event.preventDefault();
-//     let addedItem = new Product (cartItems.value);
-//     if (localStorage.value === ""){
-//         alert: string ("Din varukorg är tom");
-//         return false;
-//     } else{
-//         cart.push(addedItem);
-//         saveToLocalStorage();
-//         displayHTML();
-//         input.value = "";
-//     }
-// }
-// function saveToLocalStorage(){
-//     let myLS = JSON.stringify(cart);
-//     localStorage.setItem("cart", myLS);
-// }
-// const getFromLocalStorage = () => {
-//     if (localStorage.getItem("cart") === null || "") {
-//       cart = "";
-//     } else {
-//       cart = JSON.parse(localStorage.getItem("cart"));
-//     }
-//     displayHTML();
-//   };
+
 /*--------------------------------------------------------------------------------------------------------*/
 
 

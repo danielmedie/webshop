@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="scss/_catalog.scss" rel="stylesheet">
     <link href="scss/main.scss" rel="stylesheet">
-    <script src="ts/main.ts" type="module" defer></script>
+    <script src="ts/models/catalog.ts" type="module" defer></script>
     <script src="https://kit.fontawesome.com/bc5eefc1c7.js" crossorigin="anonymous" type="module" ></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
     <title>StudioInk</title>
@@ -24,7 +24,7 @@
                     <div class="nav-wrapper">
                         <nav class="nav__wrapper__nav">
                             <a class="nav__wrapper__nav--a" href="index.html">Hem</a><br>
-                        <a class="nav__wrapper__nav--a" href="#about">Om</a><br>
+                        <a class="nav__wrapper__nav--a" href="index.html#about">Om</a><br>
                         <div id="dropdown-products">
                         <a class="nav__wrapper__nav--a"  href="catalog.html">Våra produkter
                         <div class="dropdown-content">
@@ -35,7 +35,10 @@
                         </a>
                     </div>
                         <br>
-                        <a class="nav__wrapper__nav--a" href="#contact">Kontakt</a><br>
+                        <a class="nav__wrapper__nav--a" href="index.html#contact">Kontakt</a><br>
+                        <a class="shoppingcart-icon" href="checkout.html">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="shoppingcart-text">Shopping cart</span>
                         </nav>
                     </div>
                 </div>
@@ -45,8 +48,7 @@
             <h2 class="container__title">Våra produkter</h2>
             <section class="container__products"></section>
         </section>
-        <section class="new-in__container" id="new-in__container"></section>
-        <section class="new-in__container__desktop" id="new-in__container__desktop"></section>
+        <section class="products__container" id="products__container"></section>
 
         <footer id="contact">
             <section id="footer-container">

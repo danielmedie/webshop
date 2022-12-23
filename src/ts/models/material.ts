@@ -19,7 +19,7 @@ let painting2 = {
 
 let products: Product[] = [painting1]
 
-let section: HTMLDivElement = document.getElementById('new-in__container') as HTMLDivElement
+let section: HTMLDivElement = document.getElementById('products__container') as HTMLDivElement
 let selectionDesktop: HTMLDivElement = document.getElementById('new-in__container__desktop') as HTMLDivElement
 
 
@@ -39,11 +39,11 @@ for (let i = 0; i < products.length; i++) {
     section.appendChild(art)
     // selectionDesktop.appendChild(art)
 
-    art.className = 'new-in__container__box'
-    pTitle.className = 'new-in__container__box__title'
-    img.className = 'new-in__container__box__image'
-    pDescription.className = 'new-in__container__box__description'
-    pPrice.className = 'new-in__container__box__price'
+    art.className = 'products__container__box'
+    pTitle.className = 'products__container__box__title'
+    img.className = 'products__container__box__image'
+    pDescription.className = 'products__container__box__description'
+    pPrice.className = 'products__container__box__price'
 
     pTitle.innerHTML = products[i].title;
     img.src = products[i].imgURL;
