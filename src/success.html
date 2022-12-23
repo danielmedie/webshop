@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./scss/main.scss">
     <script src="ts/main.ts" type="module" defer></script>
+    <title>Studio Ink</title>
     <script src="https://kit.fontawesome.com/bc5eefc1c7.js" crossorigin="anonymous" type="module" ></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
-    <title>Document</title>
+
 </head>
 <body>
     <section id="home">
@@ -22,82 +23,37 @@
             <div class="nav">
                 <div class="nav-wrapper">
                     <nav class="nav__wrapper__nav">
-                        <a class="nav__wrapper__nav--a" href="index.html">Hem</a><br>
-                    <a class="nav__wrapper__nav--a" href="#about">Om</a><br>
+                        <a class="nav__wrapper__nav--a" href="#home">Hem</a><br>
+                    <a class="nav__wrapper__nav--a" href="#om-oss">Om</a><br>
                     <div id="dropdown-products">
-                    <a class="nav__wrapper__nav--a" href="catalog.html">Våra produkter
+                    <a class="nav__wrapper__nav--a"  href="catalog.html">Våra produkter
+                    </a>
                     <div class="dropdown-content">
                         <a class="dropdown-content__products" href="artist.html">ARTIST</a>
                         <a class="dropdown-content__products" href="paintings.html">PAINTINGS</a>
                         <a class="dropdown-content__products" href="material.html">MATERIAL</a>
                     </div>
-                    </a>
                 </div>
                     <br>
                     <a class="nav__wrapper__nav--a" href="#contact">Kontakt</a><br>
                     <a class="shoppingcart-icon" href="checkout.html">
                         <i class="fa-solid fa-cart-shopping"></i>
                         <span class="shoppingcart-text">Shopping cart</span>
+                      </a>
                     </nav>
+                    
                 </div>
             </div>
         </header>
     </section>
-    <section class ="container">
-        <h2 class="container__title">Kassa</h2>
-        <section class="container__products"></section>
-    </section>
-    <section class="items-preview">
 
+    <section class="thank-you__container">
+        <h2 id="thank-you__container__head">Tack för ditt köp!</h2>
+            <section class="thank-you__container__paragraph">
+                <p>Vi har registrerat din beställning som packeteras för att skickas till dig.</p>
+            </section>
     </section>
 
-    <section class="billing-shipping">
-        <form id="Shipping-form">
-            <fieldset>
-              <legend>Shipping</legend>
-               
-              <input id="first-name" name="first-name" type="text" placeholder="First name*"> <br>
-              <input id="last-name" name="last-name" type="text" placeholder="Last name*"> <br>
-              <input id="email" name="email" type="email" placeholder="Email*"> <br>
-              <input id="phone-number" name="phone-number" type="number" placeholder="Phone number*"> <br>
-         
-        <p>
-                <label>
-                  Country
-                  <br />
-                  <select name="Country">
-                    <option>Denmark</option>
-                    <option>Finland</option>
-                    <option>Norway</option>
-                    <option>Sweden</option>
-                  </select>
-                </label>
-              </p> 
-              <input id="City" name="City" type="text" placeholder="City*"> <br> 
-              <input id="Address" name="Address" type="text" placeholder="Address*"> <br>
-              <input id="Zip-code" name="Zip-code" type="number" placeholder="Zip code*"> <br>
-             </fieldset>
-          </form>
-          <form id="billing-form">
-            <fieldset>
-              <legend>Payment</legend>
-              <input id="card-number" name="card-number" type="number" placeholder="Card nr: 1234 5678 9123 4567"> <br>
-            <div class="flexbox-5050">
-              <input id="expiration-date" name="expiration-date" type="number" placeholder="Exp-date*">
-              <input id="CVC/CVV" name="CVC/CVV" type="number" placeholder="CVC/CVV*">
-            </div>
-              
-        <p>
-                <button type="submit" class="btn-purchase" >
-                    <a href="success.html">Pay</a>
-                </button>
-                </a>
-              </p>
-         
-         
-             </fieldset>
-          </form>
-    </section>
     <footer id="contact">
         <section id="footer-container">
            <div id="image-container"> 
@@ -134,6 +90,6 @@
         <div id="copyright">
             <p id="copyright_paragraph">Copyright 2022 StudioInk</p>
         </div>
-    </footer>    
+    </footer>  
 </body>
 </html>
