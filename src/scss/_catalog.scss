@@ -10,6 +10,7 @@
     background-color: v.$primary_bg;
     @include m.desktop{
         display: flex;
+        flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
         }
@@ -21,6 +22,9 @@
         flex-direction: column;
         justify-content: center;
         margin: 20px;
+        @include m.desktop {
+            width: 20%;
+        }
         
         &__title{
             margin: 0 auto;
