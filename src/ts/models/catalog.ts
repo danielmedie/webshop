@@ -57,6 +57,7 @@ let p008 = {
 
 let products: Product[] = [p001, p002, p003, p004, p005, p006, p007, p008]
 
+
 let section: HTMLDivElement = document.getElementById('products__container') as HTMLDivElement
 
 
@@ -99,6 +100,44 @@ for (let i = 0; i < products.length; i++) {
 
 }
 
+
+// Funktion för att sortera produkterna i bokstavsordning
+
+function sortProducts(products: Product[]): Product[] {
+    return products.sort((a: Product, b: Product) => {
+      const nameA = a.title.toLowerCase();
+      const nameB = b.title.toLowerCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+ 
+  const productContainer: HTMLElement = document.getElementById("products__container")!;
+  const sortButton = document.getElementById("sort-button");
+  if (sortButton){
+  sortButton.addEventListener("click", () => {
+    const sortedProducts = sortProducts(products);
+  productContainer.innerHTML = "";
+  sortedProducts.forEach((product) => {
+    const productElement = document.createElement ("div");
+    productElement.innerHTML = products;
+    productContainer.appendChild(productElement);
+    
+    // productContainer.innerHTML += `
+    //   <div class="product">
+    //     <h2 class="product-title">${product.title}</h2>
+    //     <p class="product-description">${product.description}</p>
+    //     <p class="product-price">${product.price}</p>
+    //     <img class="product-image" src="${product.imgURL}" alt="${product.title}">
+    //   </div>
+    // `;
+  });
+});
 // for (let i = 0; i < productsDesktop.length; i++) {
 
 //     let art: HTMLDivElement = document.createElement('div')
@@ -230,5 +269,4 @@ function updateCartTotal() {
 
 function previewItems() {
 
-}
-
+}}

@@ -1,6 +1,10 @@
 @use "variables" as v;
 @use "mixins" as m;
 
+.sort-button {
+    width: 25px;
+    height: 25px;
+}
 .products__container{
     width: 100%;
     height: 100%;
