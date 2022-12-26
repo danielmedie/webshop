@@ -125,17 +125,17 @@ function sortProducts(products: Product[]): Product[] {
   productContainer.innerHTML = "";
   sortedProducts.forEach((product) => {
     const productElement = document.createElement ("div");
-    productElement.innerHTML = products;
-    productContainer.appendChild(productElement);
+    // productElement.innerHTML = products;
+    // productContainer.appendChild(productElement);
     
-    // productContainer.innerHTML += `
-    //   <div class="product">
-    //     <h2 class="product-title">${product.title}</h2>
-    //     <p class="product-description">${product.description}</p>
-    //     <p class="product-price">${product.price}</p>
-    //     <img class="product-image" src="${product.imgURL}" alt="${product.title}">
-    //   </div>
-    // `;
+    productContainer.innerHTML += `
+      <div class="product">
+        <h2 class="product-title">${product.title}</h2>
+        <p class="product-description">${product.description}</p>
+        <p class="product-price">${product.price}</p>
+        <img class="product-image" src="${product.imgURL}" alt="${product.title}">
+      </div>
+    `;
   });
 });
 // for (let i = 0; i < productsDesktop.length; i++) {
