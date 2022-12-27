@@ -62,9 +62,15 @@ let section: HTMLDivElement = document.getElementById('new-in__container') as HT
 let selectionDesktop: HTMLDivElement = document.getElementById('new-in__container__desktop') as HTMLDivElement
 let itemsPreview: HTMLDivElement = document.getElementById('items-preview') as HTMLDivElement
 
+let cart : [] = [];
+//let cartItems : [] = [];
+
+function addToLocalStorage(){
+    localStorage
 if (!localStorage.getItem('cart')) {
     localStorage.setItem('cart', JSON.stringify([]))
   }
+}
 
   const addedToCart = (product: Product) => {
     let cart = JSON.parse(localStorage.getItem('cart') || '[]')
@@ -152,68 +158,76 @@ for (let i = 0; i < productsDesktop.length; i++) {
 
 
 
-let removeCartItemsButton : HTMLCollection = document.getElementsByClassName('remove-item-btn') as HTMLCollection
+// let removeCartItemsButton : HTMLCollection = document.getElementsByClassName('remove-item-btn') as HTMLCollection
 
-function removeCartItems(event:any) {
-    let buttonClicked = event.target
-    buttonClicked.parentElement.remove()
+// function removeCartItems(event:any) {
+//     let buttonClicked = event.target
+//     buttonClicked.parentElement.remove()
 
-}
+// }
 
-for (let i = 0; i < removeCartItems.length; i++) {
-    // let remove = removeCartItems[i];
-    // remove.addEventListener('click', removeCartItems)
-}
+// for (let i = 0; i < removeCartItems.length; i++) {
+//     // let remove = removeCartItems[i];
+//     // remove.addEventListener('click', removeCartItems)
+// }
 
-function addToCart(event:any) {
-    let button = event.target
-    let shopItem = button.parentElement
+
+document.getElementsByClassName('shop-items-button')[0].addEventListener('click', purchasedClick)
+
+function purchasedClick() {
     
+    let cartItems: any = document.getElementsByClassName('cart-items')[0]
+    function addToCart(event:any) {
+        let button = event.target
+        let shopItem = button.parentElement
+        addToLocalStorage ();
+    
+        console.log(shopItem);
+    
+        let title = shopItem.getElementsByClassName('new-in__container__box__title')[0].innerHTML
+    
+    
+        let price = shopItem.getElementsByClassName('new-in__container__box__price')[0].innerHTML
+    
+    
+        let imgSrc = shopItem.getElementsByClassName('new-in__container__box__image')[0].src
+    
+        console.log(title);
+        console.log(price);
+        console.log(imgSrc);
+    
+    
+        addItemsToCart (title, price, imgSrc)
+        updateCartTotal()
+    
+    
+        button.addEventListener('click', localStorage.setItem('title', JSON.stringify(title) ))
+        button.addEventListener('click', localStorage.setItem('price', JSON.stringify(price) ))
+        button.addEventListener('click', localStorage.setItem('imgSrc', JSON.stringify(imgSrc) ))
+    
+        // localStorage.setItem('product', )
+    
+    }
+    function updateCartTotal() {
+        let cartItemsContainer = document.getElementsByClassName('new-in__container__desktop')[0]
+        let cartRows = cartItemsContainer.getElementsByClassName('new-in__container__desktop__box')
+    
+        for (let i = 0; i < cartRows.length; i++) {
+            let cartRow =cartRows[i];
+            let priceElement = products[i].price
+        }
+        let addToCartButtons = document.getElementsByClassName('shop-items-button')
 
-    console.log(shopItem);
-
-    let title = shopItem.getElementsByClassName('new-in__container__box__title')[0].innerHTML
-
-
-    let price = shopItem.getElementsByClassName('new-in__container__box__price')[0].innerHTML
-
-
-    let imgSrc = shopItem.getElementsByClassName('new-in__container__box__image')[0].src
-
-    console.log(title);
-    console.log(price);
-    console.log(imgSrc);
-
-
-    addItemsToCart (title, price, imgSrc)
-    updateCartTotal()
-
-
-    button.addEventListener('click', localStorage.setItem('title', JSON.stringify(title) ))
-    button.addEventListener('click', localStorage.setItem('price', JSON.stringify(price) ))
-    button.addEventListener('click', localStorage.setItem('imgSrc', JSON.stringify(imgSrc) ))
-
-    // localStorage.setItem('product', )
-
-}
-
-let addToCartButtons = document.getElementsByClassName('shop-items-button')
 for (let i = 0; i <addToCartButtons.length; i++) {
     let button =addToCartButtons[i];
     button.addEventListener('click', addToCart)
     
 }
-
-document.getElementsByClassName('shop-items-button')[0].addEventListener('click', purchasedClick)
-
-function purchasedClick() {
-    alert('Tack för ditt köp')
-    let cartItems: any = document.getElementsByClassName('cart-itmes')[0]
+    }
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
-    return
-    updateCartTotal()
+    return addToLocalStorage
 }
 
 // function addToCart(event:any) {
@@ -249,7 +263,7 @@ function purchasedClick() {
 // }
 
 
-let checkoutArray = []
+let checkoutArray : [] = []
 
 
 function addItemsToCart (title : string, price : number, imgSrc : string) {
@@ -264,7 +278,7 @@ function addItemsToCart (title : string, price : number, imgSrc : string) {
             alert('Denna produkt är finns redan i varukorgen')
         }
     }
-    
+    checkoutArray
     cartItems.append(cartRow)
     // console.log(cartRow);
     
@@ -274,16 +288,7 @@ function addItemsToCart (title : string, price : number, imgSrc : string) {
     
 }
 
-function updateCartTotal() {
-    let cartItemsContainer = document.getElementsByClassName('new-in__container__desktop')[0]
-    let cartRows = cartItemsContainer.getElementsByClassName('new-in__container__desktop__box')
 
-    for (let i = 0; i < cartRows.length; i++) {
-        let cartRow =cartRows[i];
-        let priceElement = products[i].price
-    }
-
-}
 
 /*--------------------------------------------------------------------------------------------------------*/
 
@@ -294,3 +299,6 @@ function updateCartTotal() {
     function previewItems() {
 
     }
+    function successfulPruchase (){
+    alert('Tack för ditt köp')
+}
