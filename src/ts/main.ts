@@ -174,9 +174,10 @@ for (let i = 0; i < productsDesktop.length; i++) {
 
 document.getElementsByClassName('shop-items-button')[0].addEventListener('click', purchasedClick)
 
+let cartItems: any = document.getElementsByClassName('cart-items')[0]
 function purchasedClick() {
     
-    let cartItems: any = document.getElementsByClassName('cart-items')[0]
+    
     function addToCart(event:any) {
         let button = event.target
         let shopItem = button.parentElement
@@ -224,6 +225,7 @@ for (let i = 0; i <addToCartButtons.length; i++) {
     
 }
     }
+    
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
