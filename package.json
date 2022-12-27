@@ -10,5 +10,8 @@
   "staticFiles": {
     "staticPath": "src/assets",
     "staticOutPath": "assets"
+  },
+  "dependencies": {
+    "package.json": "^2.0.1"
   }
 }

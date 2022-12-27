@@ -1,3 +1,4 @@
 function getFromLocalStorage (){
-    localStorage.getItem()
+    //localStorage.getItem()
+    
 }

@@ -62,22 +62,20 @@ let section: HTMLDivElement = document.getElementById('new-in__container') as HT
 let selectionDesktop: HTMLDivElement = document.getElementById('new-in__container__desktop') as HTMLDivElement
 let itemsPreview: HTMLDivElement = document.getElementById('items-preview') as HTMLDivElement
 
-let cart : [] = [];
+let cart : Product[] = [];
 //let cartItems : [] = [];
 
 function addToLocalStorage(){
     localStorage
 if (!localStorage.getItem('cart')) {
-    localStorage.setItem('cart', JSON.stringify([]))
+    localStorage.setItem('cart', JSON.stringify(cart))
   }
-}
-
   const addedToCart = (product: Product) => {
     let cart = JSON.parse(localStorage.getItem('cart') || '[]')
     cart.push(product)
     localStorage.setItem('cart', JSON.stringify(cart))
   }
-
+}
 for (let i = 0; i < products.length; i++) {
 
     let art: HTMLDivElement = document.createElement('div')
@@ -228,6 +226,7 @@ for (let i = 0; i <addToCartButtons.length; i++) {
     
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
+        addToLocalStorage
     }
     return addToLocalStorage
 }
