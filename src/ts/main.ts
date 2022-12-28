@@ -1,4 +1,5 @@
 import { Product } from "./models/Product";
+import CartHelper from './models/CartHelper'
 
 let painting1 = {
     title: "Syntetiska penslar bundle",
@@ -139,21 +140,25 @@ for (let i = 0; i < productsDesktop.length; i++) {
 
 /*-----------------------------------------------remove--------------------------------------------------------------*/
 
+let Cart :any = new CartHelper()
 
-let removeCartItemsButton : HTMLCollection = document.getElementsByClassName('remove-item-btn') as HTMLCollection
+// let removeCartItemsButton : HTMLCollection = document.getElementsByClassName('remove-item-btn') as HTMLCollection
 
 //let cart : HTMLCollectionElement = [];
 
 function removeCartItems(event:any) {
-    let buttonClicked = event.target
-    buttonClicked.parentElement.remove()
+    let cartRemoveBtn = document.getElementsByClassName('removeFromCart')
+    for (let i = 0; i < cartRemoveBtn.length; i++) {
+        cartRemoveBtn[i].addEventListener('click', Cart.RemoveFromCartById())
+
+    }
 
 }
 
-for (let i = 0; i < removeCartItems.length; i++) {
-    // let remove = removeCartItems[i];
-    // remove.addEventListener('click', removeCartItems)
-}
+// for (let i = 0; i < removeCartItems.length; i++) {
+//     // let remove = removeCartItems[i];
+//     // remove.addEventListener('click', removeCartItems)
+// }
 
 
 
@@ -161,10 +166,13 @@ let addToCartButtons = document.getElementsByClassName('shop-items-button')
 for (let i = 0; i <addToCartButtons.length; i++) {
     let button =addToCartButtons[i];
     button.addEventListener('click', addToCart)
-    
 }
 
-document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchasedClick)
+// document.getElementsById('btn-purchase').addEventListener('click', purchasedClick)
+// console.log(document.getElementsByClassName('btn-purchase'));
+document.getElementById('btn-purchase')?.addEventListener('click', purchasedClick)
+
+/** -------------------------------CHECKOUT ---------------------------------------------- */
 
 function purchasedClick() {
     alert('Tack för ditt köp')
@@ -172,36 +180,65 @@ function purchasedClick() {
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
-    updateCartTotal();
-    ;
+    // updateCartTotal();
+    Cart.clearProductsInCart()
+    console.log(Cart);
     
 }
 
 function addToCart(event:any) {
-let button = event.target
-let shopItem = button.parentElement
+// let button = event.target
+// let shopItem = button.parentElement
 
-console.log(shopItem);
+// console.log(shopItem);
 
-let title = shopItem.getElementsByClassName('new-in__container__box__title')[0].innerHTML
-
-
-let price = shopItem.getElementsByClassName('new-in__container__box__price')[0].innerHTML
+// let title = shopItem.getElementsByClassName('new-in__container__box__title')[0].innerHTML
 
 
-let imgSrc = shopItem.getElementsByClassName('new-in__container__box__image')[0].src
+// let price = shopItem.getElementsByClassName('new-in__container__box__price')[0].innerHTML
 
-console.log(title);
-console.log(price);
-console.log(imgSrc);
 
-addItemsToCart (title, price, imgSrc)
+// let imgSrc = shopItem.getElementsByClassName('new-in__container__box__image')[0].src
+
+// console.log(title);
+// console.log(price);
+// console.log(imgSrc);
+
+Cart.AddToCartById(2)
+
+// addItemsToCart (title, price, imgSrc)
 updateCartTotal()
 
 }
+
+
 let cartItems = document.getElementsByClassName('items-preview')[0]
 console.log(cartItems);
+
+function showInCart () {
+
+    // for (let i = 0; i < product.length; i++) {
+        // const element = product[i];
+        
+        let product: HTMLDivElement = document.createElement('div')
+        let pTitle: HTMLParagraphElement = document.createElement('p')
+        let img: HTMLImageElement = document.createElement('img')
+        let pDescription: HTMLParagraphElement = document.createElement('p')
+        let pPrice: HTMLParagraphElement = document.createElement('p')
+        let removeButton: HTMLButtonElement = document.createElement('button')
+
+        
+
+    }
+
+
+// }
+
+
+
+
 let cartItemsNames = cartItems.getElementsByClassName('new-in__container__box__title')
+
 function addItemsToCart (title : string, price : number, imgSrc : string) {
     let cartRow = document.createElement('div')
     cartRow.innerText = `${title} ${price.toString()} ${imgSrc}`
@@ -230,7 +267,31 @@ function updateCartTotal() {
 
 // let CartItems : HTMLCollection = document.getElementsByClassName('items-preview') as HTMLCollection
 
-function previewItems() {
+// function previewItems() {
 
-}
+// }
 
+/* LS */
+
+
+// let Cart :any = new CartHelper()
+
+// window.Cart = Cart;
+console.log(Cart)
+
+// Clear the Cart first (Remove later)
+Cart.clearProductsInCart()
+
+// Add by Id
+Cart.AddToCartById()
+Cart.AddToCartById(1)
+
+// GEt All Prodcusts on cart
+console.log(Cart.getProductsInCart())
+
+Cart.RemoveFromCartById(1)
+
+Cart.IncrementProductQuantity(2,3) // 4
+
+// GEt All Prodcusts on cart
+console.log(Cart.getProductsInCart())

@@ -1,15 +1,17 @@
 export default class {
 
-	cartLocalStorageKey = 'cart'
+	cartLocalStorageKey : string = 'cart'
 
 	products = [
 		{ id: 1, name: 'Foo', price : 1200 },
 		{ id: 2, name: 'Bar', price : 200, imgUrl: "https://i.imgur.com/qVZbRew.jpg" }
 	]
 
-	getProductById(productId) {
-		return this.products.find(p => p.id == productId)
-	}
+	
+
+	// getProductById(productId) {
+	// 	return this.products.find(p => p.id == productId)
+	// }
 
 	// Cart
 
@@ -17,16 +19,16 @@ export default class {
 		return this.util.get(this.cartLocalStorageKey) || [];
 	}
 
-	getProductInCart(productId) {
+	getProductInCart(productId:any) {
 		let productsInCart = this.getProductsInCart()
-		return productsInCart.find(p => p.id == productId) || false
+		return productsInCart.find((p: { id: any; }) => p.id == productId) || false
 	}
 
-	getProductById(productId) {
+	getProductById(productId:any) {
 		return this.products.find(p => p.id == productId)
 	}
 	
-	AddToCartById(productId, quantity = 1) { 
+	AddToCartById(productId :any, quantity = 1) { 
 		let product = this.getProductById(productId)
 		let productToStore = Object.assign({
 			id : 0,
@@ -40,12 +42,12 @@ export default class {
 		this.util.set(this.cartLocalStorageKey,products)
 	}
 	
-	UpdateCartById(product) { 
+	UpdateCartById(product: any) { 
 		if (!this.getProductInCart(product.id)) {
 			return;
 		}
-		let products = this.getProductsInCart()
-		products = products.map(p => {
+		let products :any = this.getProductsInCart()
+		products = products.map((p: { id: any; }) => {
 			if (p.id == product.id) {
 				return Object.assign(p,product);
 			}
@@ -54,16 +56,16 @@ export default class {
 		this.util.set(this.cartLocalStorageKey,products)
 	}
 
-	RemoveFromCartById(productId) { 
+	RemoveFromCartById(productId:any) { 
 		if (!this.getProductInCart(productId)) {
 			return;
 		}
-		let products = this.getProductsInCart()
-		products = products.filter(p => p.id != productId)
+		let products:any = this.getProductsInCart()
+		products = products.filter((p: { id: any; }) => p.id != productId)
 		this.util.set(this.cartLocalStorageKey,products)
 	}
 
-	IncrementProductQuantity(productId, change = 0) { 
+	IncrementProductQuantity(productId:any, change = 0) { 
 		let productInCart = this.getProductInCart(productId)
 		if (!productInCart) { 
 			return;
@@ -73,7 +75,7 @@ export default class {
 	}
 
 	clearProductsInCart() {
-		return this.util.remove(this.cartLocalStorageKey) || [];
+		return this.util.remove(this.cartLocalStorageKey) ;
 	}
 
 	// Checkout
@@ -87,11 +89,11 @@ export default class {
 	
 	util = {
 		
-		get: (key) => (JSON.parse(localStorage.getItem(key)) || null),
+		get: (key: any) => (JSON.parse(localStorage.getItem(key)!)),
 	
-		set: (key,data) => (localStorage.setItem(key, JSON.stringify(data))),
+		set: (key: string, data: string) => (localStorage.setItem(key, JSON.stringify(data))),
 	
-		remove: (key) => (localStorage.removeItem(key))
+		remove: (key: string) => (localStorage.removeItem(key))
 	}
 
 }
