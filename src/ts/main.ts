@@ -212,13 +212,17 @@ updateCartTotal()
 }
 
 
-let cartItems = document.getElementsByClassName('items-preview')[0]
+let cartItems: HTMLDivElement = document.getElementById!('items-preview') as HTMLDivElement
+// let cartItems: any = document.getElementById('items-preview') as any
 console.log(cartItems);
 
-function showInCart () {
+// let section: HTMLDivElement = document.getElementById('new-in__container') as HTMLDivElement
 
-    for (let i = 0; i < products.length; i++) {
-        const element = products[i];
+function showInCart () {
+    let productsInLS = Cart.getProductsInCart()
+
+    for (let i = 0; i < productsInLS.length; i++) {
+        // const element = products[i];
         
         let product: HTMLDivElement = document.createElement('div')
         let pTitle: HTMLParagraphElement = document.createElement('p')
@@ -227,11 +231,33 @@ function showInCart () {
         let pPrice: HTMLParagraphElement = document.createElement('p')
         let removeButton: HTMLButtonElement = document.createElement('button')
 
+        product.appendChild(pTitle)
+        product.appendChild(img)
+        product.appendChild(pDescription)
+        product.appendChild(pPrice)
+        product.appendChild(removeButton)
+    
+    
+        cartItems.appendChild(product)
+
+
+        removeButton.innerHTML = 'Remove'
+        removeButton.className = 'shop-items-button'
+    
+        product.className = 'new-in__container__box'
+        pTitle.className = 'new-in__container__box__title'
+        img.className = 'new-in__container__box__image'
+        pDescription.className = 'new-in__container__box__description'
+        pPrice.className = 'new-in__container__box__price'
+    
+        pTitle.innerHTML = products[i].title;
+        img.src = products[i].imgURL;
+        img.alt = "Product image";
+        pDescription.innerHTML = products[i].description;
+        pPrice.innerHTML = products[i].price.toString() + ' kr';
 
 
     }
-
-
 }
 
 

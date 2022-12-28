@@ -4,7 +4,9 @@ export default class {
 
 	products = [
 		{ id: 1, name: 'Foo', price : 1200 },
-		{ id: 2, name: 'Bar', price : 200, imgUrl: "https://i.imgur.com/qVZbRew.jpg" }
+		{ id: 2, name: 'Bar', price : 200, imgUrl: "https://i.imgur.com/qVZbRew.jpg" },
+		{ id: 3, name: 'Summer in Italy', price : 244 , imgUrl: "https://i.imgur.com/qVZbRew.jpg" }
+
 	]
 
 	
