@@ -217,8 +217,8 @@ console.log(cartItems);
 
 function showInCart () {
 
-    // for (let i = 0; i < product.length; i++) {
-        // const element = product[i];
+    for (let i = 0; i < products.length; i++) {
+        const element = products[i];
         
         let product: HTMLDivElement = document.createElement('div')
         let pTitle: HTMLParagraphElement = document.createElement('p')
@@ -227,12 +227,12 @@ function showInCart () {
         let pPrice: HTMLParagraphElement = document.createElement('p')
         let removeButton: HTMLButtonElement = document.createElement('button')
 
-        
+
 
     }
 
 
-// }
+}
 
 
 
