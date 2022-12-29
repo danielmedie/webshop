@@ -90,7 +90,7 @@ body{
                   }
                   .dropdown-content {
                     display: none;
-                    z-index: 1;
+                    z-index: 2;
                     flex-direction: column;
                     background-color: #7d869c77;
                     color: white;
@@ -377,35 +377,35 @@ margin-bottom: 10vh;
                     background-color: #7D869C;
                     position: relative;
                     z-index: 2;
-
-                    #our-products:hover .dropdown-content {
-                        display: block;
-                    }
-                    
-                    .dropdown-content {
-                        display: hidden;
-                        position: absolute;
-                        // z-index: 40;
-                    }
-                    
-                    .dropdown-content:hover {
-                        // width: 100px;
-                        // height: 200px;
-                        position: absolute;
-                        justify-content: left;
-                        z-index: 5;
-                        width: 100px;
-
-                    }
-                    .dropdown-content__products {
-                        justify-content: left;
-                        z-index: 10;
-                      }
                     .nav__wrapper__nav--a {
                       font-size: v.$medium;
                       }
                     }   
                   }
+                }
+                #our-products:hover .dropdown-content {
+                  display: block;
+              }
+              
+              .dropdown-content {
+                  display: hidden;
+                  position: absolute;
+                  z-index: 20;
+                  // z-index: 40;
+              }
+              
+              .dropdown-content:hover {
+                  // width: 100px;
+                  // height: 200px;
+                  position: absolute;
+                  justify-content: left;
+                  z-index: 5;
+                  width: 100px;
+
+              }
+              .dropdown-content__products {
+                  justify-content: left;
+                  z-index: 10;
                 }
               }
             }

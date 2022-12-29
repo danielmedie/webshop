@@ -15,15 +15,19 @@ let itemsPreview: HTMLDivElement = document.getElementById(
 let shoppingCart: HTMLAnchorElement = document.getElementById(
   "cart"
 ) as HTMLAnchorElement;
-let totalPrice: HTMLParagraphElement = document.getElementById(
+let totalPrice: HTMLHeadingElement = document.getElementById(
   "totalPrice"
-) as HTMLParagraphElement;
+) as HTMLHeadingElement;
 
 export const printCart = () => {
+  if (itemsPreview) {
+    itemsPreview.innerHTML = "";
+  }
   LoadToLS();
   totalSum = 0;
   totalPrice.innerHTML = "";
   // shoppingCart.innerHTML = "";
+  
   itemsPreview.innerHTML = "";
 for (let i = 0; i < cart.length; i++) {
     //* create HTML ELEMENT
@@ -63,13 +67,16 @@ for (let i = 0; i < cart.length; i++) {
 
     cartDiv.className = "cartDiv";
     imgWrapper.className = "img-wrapper";
-    productImg.className = "productImg";
+    productImg.className = "productImg"; 
     productTittle.className = "productTittle";
 
     // räkna ihop summan av alla produkterna som finns i checkout page
-    totalSum += cart[i].product.price * cart[i].amount;
-    totalPrice.innerHTML = +totalSum.toString() + "kr";
-    console.log(totalPrice, "Total summa:");
+    // totalSum += cart[i].product.price * cart[i].amount;
+    // totalPrice.innerHTML = +totalSum.toString() + "kr";
+    console.log("Total summa:" + totalPrice.innerHTML);
+    // console.log(totalPrice);
+
+    
     // räkna ihop totala amount av en produkt
     totalAmountOfProduct.innerHTML = cart[i].amount.toString();
 
@@ -84,16 +91,19 @@ for (let i = 0; i < cart.length; i++) {
         printCart();
       }
     });
-plusButton.addEventListener("click", () => {
+    plusButton.addEventListener("click", () => {
       cart[i].amount++;
       printCart();
     });
 
     totalSum += cart[i].product.price * cart[i].amount;
-
+    
     totalPrice.innerHTML = +totalSum.toString() + "kr";
   }
 };
+
+
+
 export function LoadFormLs() {
   let itemFromLs: string = localStorage.getItem("CartList") || "[]";
   let objectFromLs: CartItem[] = JSON.parse(itemFromLs);
