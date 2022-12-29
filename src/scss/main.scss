@@ -350,8 +350,9 @@ h2 {
   display: flex;
 justify-content: center;
 color: v.$my_lilac;
-margin-top: 5vh;
-margin-bottom: 10vh;
+// border: 3px solid black;
+font-size: xxx-large;
+margin-top: 0;
 }
     @include m.desktop {
         #home{
