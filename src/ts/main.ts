@@ -212,7 +212,7 @@ updateCartTotal()
 }
 
 
-let cartItems: HTMLDivElement = document.getElementById!('items-preview') as HTMLDivElement
+let cartItems: HTMLDivElement = document.getElementById('items-preview')! as HTMLDivElement
 // let cartItems: any = document.getElementById('items-preview') as any
 console.log(cartItems);
 
