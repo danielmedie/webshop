@@ -27,6 +27,7 @@
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
+        margin-bottom: 10%;
         }
     &__box{
         width: 70%;
@@ -63,6 +64,9 @@
             // background-color: aqua;
             display: flex;
             justify-content: center;
+            @include m.desktop {
+                height: 55%;
+            }
         }
         &__price{
             margin: 0 auto;
