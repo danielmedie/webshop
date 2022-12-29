@@ -98,7 +98,7 @@ for (let i = 0; i < cart.length; i++) {
 
     totalSum += cart[i].product.price * cart[i].amount;
     
-    totalPrice.innerHTML =  "Att betala: " + totalSum.toString() + "kr";
+    totalPrice.innerHTML = "Att betala: " + totalSum.toString() + "kr";
   }
 };
 
