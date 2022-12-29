@@ -61,9 +61,9 @@ for (let i = 0; i < cart.length; i++) {
     cartDiv.appendChild(productPrice);
     cartDiv.appendChild(ButtonContainer);
 
-    ButtonContainer.appendChild(minusButton);
-    ButtonContainer.appendChild(totalAmountOfProduct);
     ButtonContainer.appendChild(plusButton);
+    ButtonContainer.appendChild(totalAmountOfProduct);
+    ButtonContainer.appendChild(minusButton);
 
     cartDiv.className = "cartDiv";
     imgWrapper.className = "img-wrapper";
