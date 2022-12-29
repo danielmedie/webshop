@@ -347,12 +347,11 @@ button {
 // ----------------------checkout page-------------------------------------------
 
 h2 {
-  display: flex;
+display: flex;
 justify-content: center;
 color: v.$my_lilac;
-// border: 3px solid black;
-font-size: xxx-large;
-margin-top: 0;
+margin-top: 5vh;
+margin-bottom: 10vh;
 }
     @include m.desktop {
         #home{
