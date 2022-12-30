@@ -17,9 +17,7 @@ let section: HTMLDivElement = document.getElementById('products__container') as 
 
 
 for (let i = 0; i < products.length; i++) {
-
     section.innerHTML = ""
-    // createHTML()
     let art: HTMLDivElement = document.createElement('div')
     let pTitle: HTMLParagraphElement = document.createElement('p')
     let img: HTMLImageElement = document.createElement('img')
@@ -35,7 +33,6 @@ let buyButton: HTMLButtonElement = document.createElement("button");
 
 
     section.appendChild(art)
-    // selectionDesktop.appendChild(art)
     buyButton.innerHTML = 'Köp'
     buyButton.className = 'shop-items-button'
 

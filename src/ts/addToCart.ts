@@ -12,9 +12,6 @@ let totalSum = 0;
 let itemsPreview: HTMLDivElement = document.getElementById(
   "items-preview"
 ) as HTMLDivElement;
-let shoppingCart: HTMLAnchorElement = document.getElementById(
-  "cart"
-) as HTMLAnchorElement;
 let totalPrice: HTMLHeadingElement = document.getElementById(
   "totalPrice"
 ) as HTMLHeadingElement;
@@ -29,7 +26,6 @@ export const printCart = () => {
   
   itemsPreview.innerHTML = "";
 for (let i = 0; i < cart.length; i++) {
-    //* skapar HTMLelement
     let imgWrapper: HTMLDivElement = document.createElement("div");
     let cartDiv: HTMLDivElement = document.createElement("div");
     let productImg: HTMLImageElement = document.createElement("img");
@@ -68,11 +64,8 @@ for (let i = 0; i < cart.length; i++) {
     productImg.className = "productImg"; 
     productTittle.className = "productTittle";
 
-    // räknar ihop summan av alla produkter som finns i checkoutpagen
     console.log("Total summa:" + totalPrice.innerHTML);
 
-    
-    // räkna ihop total amount av en produkt i local Storage
     totalAmountOfProduct.innerHTML = cart[i].amount.toString();
 
     minusButton.addEventListener("click", () => {
