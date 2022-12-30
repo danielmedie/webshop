@@ -54,27 +54,28 @@ let painting8 = {
 
 let products: Product[] = [painting2, painting3, painting4, painting5, painting6 ,painting7, painting8];
 
-let section: HTMLDivElement = document.getElementById('new-in__container') as HTMLDivElement
+let section: HTMLDivElement = document.getElementById('products__container') as HTMLDivElement
 
 
 for (let i = 0; i < products.length; i++) {
     section.innerHTML = ""
-    // createHTML()
+
     let art: HTMLDivElement = document.createElement('div')
     let pTitle: HTMLParagraphElement = document.createElement('p')
     let img: HTMLImageElement = document.createElement('img')
     let pDescription: HTMLParagraphElement = document.createElement('p')
     let pPrice: HTMLParagraphElement = document.createElement('p')
     let buyButton: HTMLButtonElement = document.createElement("button");
-
+    
+    section.appendChild(art)
     art.appendChild(pTitle)
     art.appendChild(img)
     art.appendChild(pDescription)
     art.appendChild(pPrice)
     art.appendChild(buyButton)
+    
 
 
-    section.appendChild(art)
     // selectionDesktop.appendChild(art)
     buyButton.innerHTML = 'Köp'
     buyButton.className = 'shop-items-button'
@@ -104,4 +105,6 @@ for (let i = 0; i < products.length; i++) {
         printCart();
         localStorage.setItem("CartList", JSON.stringify(cart));
       });
+      console.log(art);
 }
+
