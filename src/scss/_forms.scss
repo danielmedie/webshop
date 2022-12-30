@@ -16,7 +16,7 @@
 
 .flexbox-5050 {
     display: flex;
-    width: 70%;
+    width: 72%;
     justify-content: space-between;
     align-items: center;
     text-align: center;
@@ -35,11 +35,14 @@ fieldset {
     display: flex;
     flex-direction: column;
     align-items: center;
+    #btn-purchase {
+        background-color: v.$pay_button;
+    }
 }
-// fieldset {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-between;
-//     align-items: center;
-// }
+select {
+    background-color: v.$input_bgcolor;
+}
 
+.payment {
+    background-color: v.$pay_button;
+}

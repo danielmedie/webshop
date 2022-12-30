@@ -1,89 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="scss/_catalog.scss" rel="stylesheet">
-    <link href="scss/main.scss" rel="stylesheet">
-    <script src="ts/main.ts" type="module" defer></script>
-    <script src="https://kit.fontawesome.com/bc5eefc1c7.js" crossorigin="anonymous" type="module" ></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
-    <title>StudioInk</title>
-</head>
-<body>
-        <section id="home">
-            <header>
-                <input id="toggle" type="checkbox"></input>
-                <label for="toggle" class="hamburger">
-                    <div class="top-bun"></div>
-                    <div class="meat"></div>
-                    <div class="bottom-bun"></div>
-                </label>
-                <div class="nav">
-                    <div class="nav-wrapper">
-                        <nav class="nav__wrapper__nav">
-                            <a class="nav__wrapper__nav--a" href="index.html">Hem</a><br>
-                        <a class="nav__wrapper__nav--a" href="#about">Om</a><br>
-                        <div id="dropdown-products">
-                        <a class="nav__wrapper__nav--a"  href="catalog.html">Våra produkter
-                        <div class="dropdown-content">
-                            <a class="dropdown-content__products" href="artist.html">ARTIST</a>
-                            <a class="dropdown-content__products" href="paintings.html">PAINTINGS</a>
-                            <a class="dropdown-content__products" href="material.html">MATERIAL</a>
-                        </div>
-                        </a>
-                    </div>
-                        <br>
-                        <a class="nav__wrapper__nav--a" href="#contact">Kontakt</a><br>
-                        </nav>
-                    </div>
-                </div>
-            </header>
-        </section>
-        <section class ="container">
-            <h2 class="container__title">Våra produkter</h2>
-            <section class="container__products"></section>
-        </section>
-        <section class="new-in__container" id="new-in__container"></section>
-        <section class="new-in__container__desktop" id="new-in__container__desktop"></section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="scss/_catalog.scss" rel="stylesheet" />
+    <link href="scss/main.scss" rel="stylesheet" />
 
-        <footer id="contact">
-            <section id="footer-container">
-               <div id="image-container"> 
-                    <img id="footer-img">
-                </div>
-            <ul class="contact__adress">
-                <h3>Contact</h3>
-                <li class="contact__adress__info">073-123 45 67</li>
-                <li class="contact__adress__info">kundservice@studioink.se</li>
-                <li class="contact__adress__info">Chatt</li>
-            </ul>
-            <ul class="contact__social">
-                <h3>Social Media</h3>
-                <li class="contact__social__media">
-                    <a class="contact__social__media__path">
-                        <i class="fa-brands fa-instagram"></i>
-                        <span class="contact__social__media__path__text" id="instagram">Instagram</span>
-                    </a>
-                </li>
-                <li class="contact__social__media">
-                    <a class="contact__social__media__path">
-                        <i class="fa-brands fa-twitter"></i>
-                        <span class="contact__social__media__path__text" id="twitter">Twitter</span>
-                    </a>
-                </li>
-                <li class="contact__social__media">
-                    <a class="contact__social__media__path">
-                        <i class="fa-brands fa-facebook-f"></i>
-                        <span class="contact__social__media__path__text" id="facebook">Facebook</span>
-                    </a>
-                </li>
-            </ul>
-            </section>
-            <div id="copyright">
-                <p id="copyright_paragraph">Copyright 2022 StudioInk</p>
-            </div>
-        </footer>  
-</body>
+    <script src="./ts/pages/products.ts" type="module" defer></script>
+    <script
+      src="https://kit.fontawesome.com/bc5eefc1c7.js"
+      crossorigin="anonymous"
+      type="module"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+      crossorigin="anonymous" />
+    <title>StudioInk</title>
+  </head>
+  <body>
+    <section id="home">
+      <header>
+        <input id="toggle" type="checkbox" />
+        <label for="toggle" class="hamburger">
+          <div class="top-bun"></div>
+          <div class="meat"></div>
+          <div class="bottom-bun"></div>
+        </label>
+        <div class="nav">
+          <div class="nav-wrapper">
+            <nav class="nav__wrapper__nav">
+              <a class="nav__wrapper__nav--a" href="index.html">Hem</a><br />
+              <a class="nav__wrapper__nav--a" href="index.html#om-oss">Om</a>
+              <div id="dropdown-products">
+                <a class="nav__wrapper__nav--a" href="catalog.html">
+                  Våra produkter
+                  <div class="dropdown-content">
+                    <a class="dropdown-content__products" href="paintings.html">PAINTINGS</a>
+                    <a class="dropdown-content__products" href="material.html">MATERIAL</a>
+                  </div>
+                </a>
+              </div>
+              <a class="nav__wrapper__nav--a" href="index.html#contact">Kontakt</a><br />
+              <a class="shoppingcart-icon" href="checkout.html">
+                <i class="fa-solid fa-cart-shopping" id="cart"></i>
+              </a>
+              <span class="shoppingcart-text">Shopping cart</span>
+            </nav>
+          </div>
+        </div>
+      </header>
+    </section>
+
+
+    <section class="new-in__container" id="new-in__container"></section>
+
+    <footer id="contact">
+      <section id="footer-container">
+        <div id="image-container">
+          <img id="footer-img" />
+        </div>
+        <ul class="contact__adress">
+          <h3>Contact</h3>
+          <li class="contact__adress__info">073-123 45 67</li>
+          <li class="contact__adress__info">kundservice@studioink.se</li>
+          <li class="contact__adress__info">Chatt</li>
+        </ul>
+        <ul class="contact__social">
+          <h3>Social Media</h3>
+          <li class="contact__social__media">
+            <a class="contact__social__media__path">
+              <i class="fa-brands fa-instagram"></i>
+              <span class="contact__social__media__path__text" id="instagram">Instagram</span>
+            </a>
+          </li>
+          <li class="contact__social__media">
+            <a class="contact__social__media__path">
+              <i class="fa-brands fa-twitter"></i>
+              <span class="contact__social__media__path__text" id="twitter">Twitter</span>
+            </a>
+          </li>
+          <li class="contact__social__media">
+            <a class="contact__social__media__path">
+              <i class="fa-brands fa-facebook-f"></i>
+              <span class="contact__social__media__path__text" id="facebook">Facebook</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <div id="copyright">
+        <p id="copyright_paragraph">Copyright 2022 StudioInk</p>
+      </div>
+    </footer>
+  </body>
 </html>
