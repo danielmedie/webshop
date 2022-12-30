@@ -54,11 +54,12 @@ let painting8 = {
 
 let products: Product[] = [painting2, painting3, painting4, painting5, painting6 ,painting7, painting8];
 
-let section: HTMLDivElement = document.getElementById('products__container') as HTMLDivElement
+let section: HTMLTableSectionElement = document.getElementById(
+    "new-in__container"
+  ) as HTMLTableSectionElement;
 
 
 for (let i = 0; i < products.length; i++) {
-    section.innerHTML = ""
 
     let art: HTMLDivElement = document.createElement('div')
     let pTitle: HTMLParagraphElement = document.createElement('p')
