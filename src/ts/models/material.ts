@@ -7,20 +7,11 @@ let painting1 = {
     imgURL: "https://i.imgur.com/4KpavDq.jpg"
 };
 
-let painting2 = {
-    title: "En sommardröm",
-    description: "Eaque, consequuntur a expedita odit vero blanditiis autem explicabo nisi",
-    price: 2600,
-    imgURL: "https://i.imgur.com/qVZbRew.jpg"
-};
-
-
 
 
 let products: Product[] = [painting1]
 
 let section: HTMLDivElement = document.getElementById('products__container') as HTMLDivElement
-let selectionDesktop: HTMLDivElement = document.getElementById('new-in__container__desktop') as HTMLDivElement
 
 
 for (let i = 0; i < products.length; i++) {
@@ -50,19 +41,4 @@ for (let i = 0; i < products.length; i++) {
     img.alt = "Product image";
     pDescription.innerHTML = products[i].description;
     pPrice.innerHTML = products[i].price.toString() + ' kr';
-
-}
-
-/*-----------------------------------------------remove--------------------------------------------------------------*/
-
-
-let removeCartItems : HTMLCollection = document.getElementsByClassName('remove-item-btn') as HTMLCollection
-
-
-for (let i = 0; i < removeCartItems.length; i++) {
-    let remove = removeCartItems[i];
-    remove.addEventListener('click', function (event) {
-        let buttonClicked = event.target
-        // buttonClicked.parent
-    })
 }
