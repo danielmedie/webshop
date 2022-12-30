@@ -35,6 +35,9 @@ fieldset {
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include m.desktop {
+        width: 60%;
+    }
     #btn-purchase {
         background-color: v.$pay_button;
     }
