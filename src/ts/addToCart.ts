@@ -12,9 +12,6 @@ let totalSum = 0;
 let itemsPreview: HTMLDivElement = document.getElementById(
   "items-preview"
 ) as HTMLDivElement;
-let shoppingCart: HTMLAnchorElement = document.getElementById(
-  "cart"
-) as HTMLAnchorElement;
 let totalPrice: HTMLHeadingElement = document.getElementById(
   "totalPrice"
 ) as HTMLHeadingElement;
@@ -26,11 +23,9 @@ export const printCart = () => {
   LoadToLS();
   totalSum = 0;
   totalPrice.innerHTML = "";
-  // shoppingCart.innerHTML = "";
   
   itemsPreview.innerHTML = "";
 for (let i = 0; i < cart.length; i++) {
-    //* create HTML ELEMENT
     let imgWrapper: HTMLDivElement = document.createElement("div");
     let cartDiv: HTMLDivElement = document.createElement("div");
     let productImg: HTMLImageElement = document.createElement("img");
@@ -44,7 +39,6 @@ for (let i = 0; i < cart.length; i++) {
 
     let totalAmountOfProduct: HTMLParagraphElement =
       document.createElement("p");
-//* value, src
 
     productTittle.innerHTML = cart[i].product.title;
     productImg.src = cart[i].product.imgURL;
@@ -70,17 +64,9 @@ for (let i = 0; i < cart.length; i++) {
     productImg.className = "productImg"; 
     productTittle.className = "productTittle";
 
-    // räkna ihop summan av alla produkterna som finns i checkout page
-    // totalSum += cart[i].product.price * cart[i].amount;
-    // totalPrice.innerHTML = +totalSum.toString() + "kr";
     console.log("Total summa:" + totalPrice.innerHTML);
-    // console.log(totalPrice);
 
-    
-    // räkna ihop totala amount av en produkt
     totalAmountOfProduct.innerHTML = cart[i].amount.toString();
-
-    // totalAmountOfProduct.innerHTML = +totalSum.toString() + "Kr";
 
     minusButton.addEventListener("click", () => {
       if (cart[i].amount === 1) {
@@ -102,8 +88,6 @@ for (let i = 0; i < cart.length; i++) {
   }
 };
 
-
-
 export function LoadFormLs() {
   let itemFromLs: string = localStorage.getItem("CartList") || "[]";
   let objectFromLs: CartItem[] = JSON.parse(itemFromLs);
@@ -123,5 +107,3 @@ export function LoadFormLs() {
 }
 
 LoadFormLs();
-
-// printCart();

@@ -1,4 +1,6 @@
 import { Product } from "./Product";
+import { cart, printCart } from "../addToCart";
+import { CartItem } from "./CartItem";
 
 let painting1 = {
     title: "Syntetiska penslar bundle",
@@ -7,37 +9,32 @@ let painting1 = {
     imgURL: "https://i.imgur.com/4KpavDq.jpg"
 };
 
-let painting2 = {
-    title: "En sommardröm",
-    description: "Eaque, consequuntur a expedita odit vero blanditiis autem explicabo nisi",
-    price: 2600,
-    imgURL: "https://i.imgur.com/qVZbRew.jpg"
-};
-
-
 
 
 let products: Product[] = [painting1]
 
 let section: HTMLDivElement = document.getElementById('products__container') as HTMLDivElement
-let selectionDesktop: HTMLDivElement = document.getElementById('new-in__container__desktop') as HTMLDivElement
 
 
 for (let i = 0; i < products.length; i++) {
-
+    section.innerHTML = ""
     let art: HTMLDivElement = document.createElement('div')
     let pTitle: HTMLParagraphElement = document.createElement('p')
     let img: HTMLImageElement = document.createElement('img')
     let pDescription: HTMLParagraphElement = document.createElement('p')
     let pPrice: HTMLParagraphElement = document.createElement('p')
+let buyButton: HTMLButtonElement = document.createElement("button");
 
     art.appendChild(pTitle)
     art.appendChild(img)
     art.appendChild(pDescription)
     art.appendChild(pPrice)
+    art.appendChild(buyButton)
+
 
     section.appendChild(art)
-    // selectionDesktop.appendChild(art)
+    buyButton.innerHTML = 'Köp'
+    buyButton.className = 'shop-items-button'
 
     art.className = 'products__container__box'
     pTitle.className = 'products__container__box__title'
@@ -51,18 +48,17 @@ for (let i = 0; i < products.length; i++) {
     pDescription.innerHTML = products[i].description;
     pPrice.innerHTML = products[i].price.toString() + ' kr';
 
-}
-
-/*-----------------------------------------------remove--------------------------------------------------------------*/
-
-
-let removeCartItems : HTMLCollection = document.getElementsByClassName('remove-item-btn') as HTMLCollection
-
-
-for (let i = 0; i < removeCartItems.length; i++) {
-    let remove = removeCartItems[i];
-    remove.addEventListener('click', function (event) {
-        let buttonClicked = event.target
-        // buttonClicked.parent
-    })
+    buyButton.addEventListener("click", () => {
+        for (let match = 0; match < cart.length; match++) {
+          if (cart[match].product.title === products[i].title) {
+            cart[match].amount++;
+            printCart();
+            localStorage.setItem("CartList", JSON.stringify(cart));
+            return;
+          }
+        }
+        cart.push(new CartItem(products[i], 1));
+        printCart();
+        localStorage.setItem("CartList", JSON.stringify(cart));
+      });
 }

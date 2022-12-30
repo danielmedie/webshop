@@ -1,5 +1,0 @@
-
-function getFromLocalStorage (){
-    //localStorage.getItem()
-    
-}

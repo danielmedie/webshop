@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="scss/main.scss" />
     <link rel="stylesheet" href="scss/_checkout.scss" />
-    <script src="./ts/pages/addToCart.ts" type="module" defer></script>
+    <link rel="stylesheet" href="./scss/_buttons.scss">
+    <script src="./ts/pages/addItemsToCart.ts" type="module" defer></script>
     <title>Studio Ink</title>
     <script
       src="https://kit.fontawesome.com/bc5eefc1c7.js"
@@ -19,46 +20,38 @@
   </head>
   <body>
     <section id="home">
-      <header>
-        <input id="toggle" type="checkbox" />
-        <label for="toggle" class="hamburger">
-          <div class="top-bun"></div>
-          <div class="meat"></div>
-          <div class="bottom-bun"></div>
-        </label>
-        <div class="nav">
-          <div class="nav-wrapper">
-            <nav class="nav__wrapper__nav">
-              <a class="nav__wrapper__nav--a" href="index.html">Hem</a><br />
-              <a class="nav__wrapper__nav--a" href="index.html#om-oss">Om</a><br />
-              <div id="dropdown-products">
-                <a class="nav__wrapper__nav--a" href="catalog.html"
-                  >Våra produkter
-                </a>
-                <div class="dropdown-content">
-                  <a class="dropdown-content__products" href="artist.html"
-                    >ARTIST</a
-                  >
-                  <a class="dropdown-content__products" href="paintings.html"
-                    >PAINTINGS</a
-                  >
-                  <a class="dropdown-content__products" href="material.html"
-                    >MATERIAL</a
-                  >
+        <header>
+          <input id="toggle" type="checkbox" />
+          <label for="toggle" class="hamburger">
+            <div class="top-bun"></div>
+            <div class="meat"></div>
+            <div class="bottom-bun"></div>
+          </label>
+          <div class="nav">
+            <div class="nav-wrapper">
+              <nav class="nav__wrapper__nav">
+                <a class="nav__wrapper__nav--a" href="index.html">Hem</a><br />
+                <a class="nav__wrapper__nav--a" href="index.html#om-oss">Om</a>
+                <div id="dropdown-products">
+                  <a class="nav__wrapper__nav--a" href="catalog.html">
+                    Våra produkter
+                    <div class="dropdown-content">
+                      <a class="dropdown-content__products" href="paintings.html">PAINTINGS</a>
+                      <a class="dropdown-content__products" href="material.html">MATERIAL</a>
+                    </div>
+                  </a>
                 </div>
-              </div>
-              <br />
-              <a class="nav__wrapper__nav--a" href="#contact">Kontakt</a><br />
-              <a class="shoppingcart-icon" href="checkout.html">
-                <i class="fa-solid fa-cart-shopping"></i>
+                <a class="nav__wrapper__nav--a" href="index.html#contact">Kontakt</a><br />
+                <a class="shoppingcart-icon" href="checkout.html">
+                  <i class="fa-solid fa-cart-shopping" id="cart"></i>
+                </a>
                 <span class="shoppingcart-text">Shopping cart</span>
-              </a>
-            </nav>
+              </nav>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
+      </section>
 
-      <!-- kassa sida -->
     </section>
     <section class="container">
       <h2 class="container__title">Kassa</h2>
@@ -78,48 +71,46 @@
             id="first-name"
             name="first-name"
             type="text"
-            placeholder="First name*" />
-          <br />
+            placeholder="First name*"
+            required />
           <input
             id="last-name"
             name="last-name"
             type="text"
-            placeholder="Last name*" />
-          <br />
+            placeholder="Last name*"
+            required />
           <input id="email" name="email" type="email" placeholder="Email*" />
-          <br />
           <input
             id="phone-number"
             name="phone-number"
             type="number"
-            placeholder="Phone number*" />
-          <br />
+            placeholder="Phone number*" 
+            required/>
 
           <p>
             <label>
               Country
-              <br />
               <select name="Country">
-                <option>Denmark</option>
+                <option>Sweden</option>
                 <option>Finland</option>
                 <option>Norway</option>
-                <option>Sweden</option>
+                <option>Denmark</option>
               </select>
             </label>
           </p>
-          <input id="City" name="City" type="text" placeholder="City*" /> <br />
+          <input id="City" name="City" type="text" placeholder="City*"/>
           <input
             id="Address"
             name="Address"
             type="text"
-            placeholder="Address*" />
-          <br />
+            placeholder="Address*"
+            required/>
           <input
             id="Zip-code"
             name="Zip-code"
             type="number"
-            placeholder="Zip code*" />
-          <br />
+            placeholder="Zip code*"
+            required/>
         </fieldset>
       </form>
       <form id="billing-form">
@@ -129,19 +120,21 @@
             id="card-number"
             name="card-number"
             type="number"
-            placeholder="Card nr: 1234 5678 9123 4567" />
-          <br />
+            placeholder="Card nr: 1234 5678 9123 4567"
+            required />
           <div class="flexbox-5050">
             <input
               id="expiration-date"
               name="expiration-date"
               type="number"
-              placeholder="Exp-date*" />
+              placeholder="Exp-date*"
+              required />
             <input
               id="CVC/CVV"
               name="CVC/CVV"
               type="number"
-              placeholder="CVC/CVV*" />
+              placeholder="CVC/CVV*"
+              required />
           </div>
 
           <p>
@@ -153,50 +146,42 @@
       </form>
     </section>
 
-    <!-- footer -->
-
     <footer id="contact">
-      <section id="footer-container">
-        <div id="image-container">
-          <img id="footer-img" />
+        <section id="footer-container">
+          <div id="image-container">
+            <img id="footer-img" />
+          </div>
+          <ul class="contact__adress">
+            <h3>Contact</h3>
+            <li class="contact__adress__info">073-123 45 67</li>
+            <li class="contact__adress__info">kundservice@studioink.se</li>
+            <li class="contact__adress__info">Chatt</li>
+          </ul>
+          <ul class="contact__social">
+            <h3>Social Media</h3>
+            <li class="contact__social__media">
+              <a class="contact__social__media__path">
+                <i class="fa-brands fa-instagram"></i>
+                <span class="contact__social__media__path__text" id="instagram">Instagram</span>
+              </a>
+            </li>
+            <li class="contact__social__media">
+              <a class="contact__social__media__path">
+                <i class="fa-brands fa-twitter"></i>
+                <span class="contact__social__media__path__text" id="twitter">Twitter</span>
+              </a>
+            </li>
+            <li class="contact__social__media">
+              <a class="contact__social__media__path">
+                <i class="fa-brands fa-facebook-f"></i>
+                <span class="contact__social__media__path__text" id="facebook">Facebook</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <div id="copyright">
+          <p id="copyright_paragraph">Copyright 2022 StudioInk</p>
         </div>
-        <ul class="contact__adress">
-          <h3>Contact</h3>
-          <li class="contact__adress__info">073-123 45 67</li>
-          <li class="contact__adress__info">kundservice@studioink.se</li>
-          <li class="contact__adress__info">Chatt</li>
-        </ul>
-        <ul class="contact__social">
-          <h3>Social Media</h3>
-          <li class="contact__social__media">
-            <a class="contact__social__media__path">
-              <i class="fa-brands fa-instagram"></i>
-              <span class="contact__social__media__path__text" id="instagram"
-                >Instagram</span
-              >
-            </a>
-          </li>
-          <li class="contact__social__media">
-            <a class="contact__social__media__path">
-              <i class="fa-brands fa-twitter"></i>
-              <span class="contact__social__media__path__text" id="twitter"
-                >Twitter</span
-              >
-            </a>
-          </li>
-          <li class="contact__social__media">
-            <a class="contact__social__media__path">
-              <i class="fa-brands fa-facebook-f"></i>
-              <span class="contact__social__media__path__text" id="facebook"
-                >Facebook</span
-              >
-            </a>
-          </li>
-        </ul>
-      </section>
-      <div id="copyright">
-        <p id="copyright_paragraph">Copyright 2022 StudioInk</p>
-      </div>
-    </footer>
+      </footer>
   </body>
 </html>

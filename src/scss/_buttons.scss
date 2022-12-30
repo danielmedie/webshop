@@ -1,0 +1,20 @@
+@use "variables" as v;
+
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+  }
+  
+  button:hover {background-color: v.$my_lilac}
+  
+  button:active {
+    background-color: v.$my_purple;
+    transform: translateY(4px);
+  }

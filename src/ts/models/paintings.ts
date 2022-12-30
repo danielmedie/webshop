@@ -1,3 +1,5 @@
+import { cart, printCart } from "../addToCart";
+import { CartItem } from "./CartItem";
 import { Product } from "./Product";
 
 
@@ -52,7 +54,9 @@ let painting8 = {
 
 let products: Product[] = [painting2, painting3, painting4, painting5, painting6 ,painting7, painting8];
 
-let section: HTMLDivElement = document.getElementById('new-in__container') as HTMLDivElement
+let section: HTMLTableSectionElement = document.getElementById(
+    "new-in__container"
+  ) as HTMLTableSectionElement;
 
 
 for (let i = 0; i < products.length; i++) {
@@ -62,20 +66,25 @@ for (let i = 0; i < products.length; i++) {
     let img: HTMLImageElement = document.createElement('img')
     let pDescription: HTMLParagraphElement = document.createElement('p')
     let pPrice: HTMLParagraphElement = document.createElement('p')
-
+    let buyButton: HTMLButtonElement = document.createElement("button");
+    
+    section.appendChild(art)
     art.appendChild(pTitle)
     art.appendChild(img)
     art.appendChild(pDescription)
     art.appendChild(pPrice)
+    art.appendChild(buyButton)
+    
 
     section.appendChild(art)
-    // selectionDesktop.appendChild(art)
+    buyButton.innerHTML = 'Köp'
+    buyButton.className = 'shop-items-button'
 
-    art.className = 'new-in__container__box'
-    pTitle.className = 'new-in__container__box__title'
-    img.className = 'new-in__container__box__image'
-    pDescription.className = 'new-in__container__box__description'
-    pPrice.className = 'new-in__container__box__price'
+    art.className = 'products__container__box'
+    pTitle.className = 'products__container__box__title'
+    img.className = 'products__container__box__image'
+    pDescription.className = 'products__container__box__description'
+    pPrice.className = 'products__container__box__price'
 
     pTitle.innerHTML = products[i].title;
     img.src = products[i].imgURL;
@@ -83,48 +92,19 @@ for (let i = 0; i < products.length; i++) {
     pDescription.innerHTML = products[i].description;
     pPrice.innerHTML = products[i].price.toString() + ' kr';
 
+    buyButton.addEventListener("click", () => {
+        for (let match = 0; match < cart.length; match++) {
+          if (cart[match].product.title === products[i].title) {
+            cart[match].amount++;
+            printCart();
+            localStorage.setItem("CartList", JSON.stringify(cart));
+            return;
+          }
+        }
+        cart.push(new CartItem(products[i], 1));
+        printCart();
+        localStorage.setItem("CartList", JSON.stringify(cart));
+      });
+      console.log(art);
 }
 
-// for (let i = 0; i < products.length; i++) {
-
-//     let art: HTMLDivElement = document.createElement('div')
-//     let pTitle: HTMLParagraphElement = document.createElement('p')
-//     let img: HTMLImageElement = document.createElement('img')
-//     let pDescription: HTMLParagraphElement = document.createElement('p')
-//     let pPrice: HTMLParagraphElement = document.createElement('p')
-
-//     art.appendChild(pTitle)
-//     art.appendChild(img)
-//     art.appendChild(pDescription)
-//     art.appendChild(pPrice)
-
-//     selectionDesktop.appendChild(art)
-
-//     art.className = 'new-in__container__desktop__box'
-//     pTitle.className = 'new-in__container__desktop__box__title'
-//     img.className = 'new-in__container__desktop__box__image'
-//     pDescription.className = 'new-in__container__desktop__box__description'
-//     pPrice.className = 'new-in__container__desktop__box__price'
-
-//     pTitle.innerHTML = products[i].title;
-//     img.src = products[i].imgURL;
-//     img.alt = "Product image";
-//     pDescription.innerHTML = products[i].description;
-//     pPrice.innerHTML = products[i].price.toString() + ' kr';
-
-// }
-
-
-/*-----------------------------------------------remove--------------------------------------------------------------*/
-
-
-let removeCartItems : HTMLCollection = document.getElementsByClassName('remove-item-btn') as HTMLCollection
-
-
-for (let i = 0; i < removeCartItems.length; i++) {
-    let remove = removeCartItems[i];
-    remove.addEventListener('click', function (event) {
-        let buttonClicked = event.target
-        // buttonClicked.parent
-    })
-}
