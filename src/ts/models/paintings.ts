@@ -60,8 +60,7 @@ let section: HTMLTableSectionElement = document.getElementById(
 
 
 for (let i = 0; i < products.length; i++) {
-    section.innerHTML = ""
-    // createHTML()
+
     let art: HTMLDivElement = document.createElement('div')
     let pTitle: HTMLParagraphElement = document.createElement('p')
     let img: HTMLImageElement = document.createElement('img')
