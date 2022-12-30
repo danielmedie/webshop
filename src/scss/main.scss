@@ -3,6 +3,7 @@
 @use "new";
 @use 'mixins' as m;
 @use 'forms';
+@use 'buttons';
 html{
   scroll-behavior: smooth;
   body{
