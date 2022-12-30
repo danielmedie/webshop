@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="scss/main.scss" />
+    <link rel="stylesheet" href="scss/_checkout.scss" />
+    <link rel="stylesheet" href="./scss/_buttons.scss">
+    <script src="./ts/pages/addItemsToCart.ts" type="module" defer></script>
+    <title>Studio Ink</title>
+    <script
+      src="https://kit.fontawesome.com/bc5eefc1c7.js"
+      crossorigin="anonymous"
+      type="module"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+      crossorigin="anonymous" />
+  </head>
+  <body>
+    <section id="home">
+        <header>
+          <input id="toggle" type="checkbox" />
+          <label for="toggle" class="hamburger">
+            <div class="top-bun"></div>
+            <div class="meat"></div>
+            <div class="bottom-bun"></div>
+          </label>
+          <div class="nav">
+            <div class="nav-wrapper">
+              <nav class="nav__wrapper__nav">
+                <a class="nav__wrapper__nav--a" href="index.html">Hem</a><br />
+                <a class="nav__wrapper__nav--a" href="index.html#om-oss">Om</a>
+                <div id="dropdown-products">
+                  <a class="nav__wrapper__nav--a" href="catalog.html">
+                    Våra produkter
+                    <div class="dropdown-content">
+                      <a class="dropdown-content__products" href="paintings.html">PAINTINGS</a>
+                      <a class="dropdown-content__products" href="material.html">MATERIAL</a>
+                    </div>
+                  </a>
+                </div>
+                <a class="nav__wrapper__nav--a" href="index.html#contact">Kontakt</a><br />
+                <a class="shoppingcart-icon" href="checkout.html">
+                  <i class="fa-solid fa-cart-shopping" id="cart"></i>
+                </a>
+                <span class="shoppingcart-text">Shopping cart</span>
+              </nav>
+            </div>
+          </div>
+        </header>
+      </section>
+
+    </section>
+    <section class="container">
+      <h2 class="container__title">Kassa</h2>
+      <section class="container__products"></section>
+    </section>
+
+    <div id="items-preview" class="items-preview">
+    </div>
+    <h2 id="totalPrice">Att betala:</h2>
+
+    <section class="billing-shipping">
+      <form id="Shipping-form">
+        <fieldset>
+          <legend>Shipping</legend>
+
+          <input
+            id="first-name"
+            name="first-name"
+            type="text"
+            placeholder="First name*"
+            required />
+          <input
+            id="last-name"
+            name="last-name"
+            type="text"
+            placeholder="Last name*"
+            required />
+          <input id="email" name="email" type="email" placeholder="Email*" />
+          <input
+            id="phone-number"
+            name="phone-number"
+            type="number"
+            placeholder="Phone number*" 
+            required/>
+
+          <p>
+            <label>
+              Country
+              <select name="Country">
+                <option>Sweden</option>
+                <option>Finland</option>
+                <option>Norway</option>
+                <option>Denmark</option>
+              </select>
+            </label>
+          </p>
+          <input id="City" name="City" type="text" placeholder="City*"/>
+          <input
+            id="Address"
+            name="Address"
+            type="text"
+            placeholder="Address*"
+            required/>
+          <input
+            id="Zip-code"
+            name="Zip-code"
+            type="number"
+            placeholder="Zip code*"
+            required/>
+        </fieldset>
+      </form>
+      <form id="billing-form">
+        <fieldset>
+          <legend>Payment</legend>
+          <input
+            id="card-number"
+            name="card-number"
+            type="number"
+            placeholder="Card nr: 1234 5678 9123 4567"
+            required />
+          <div class="flexbox-5050">
+            <input
+              id="expiration-date"
+              name="expiration-date"
+              type="number"
+              placeholder="Exp-date*"
+              required />
+            <input
+              id="CVC/CVV"
+              name="CVC/CVV"
+              type="number"
+              placeholder="CVC/CVV*"
+              required />
+          </div>
+
+          <p>
+            <button type="submit" class="btn-purchase" id="btn-purchase">
+              <a href="success.html" class="payment">Pay</a>
+            </button>
+          </p>
+        </fieldset>
+      </form>
+    </section>
+
+    <footer id="contact">
+        <section id="footer-container">
+          <div id="image-container">
+            <img id="footer-img" />
+          </div>
+          <ul class="contact__adress">
+            <h3>Contact</h3>
+            <li class="contact__adress__info">073-123 45 67</li>
+            <li class="contact__adress__info">kundservice@studioink.se</li>
+            <li class="contact__adress__info">Chatt</li>
+          </ul>
+          <ul class="contact__social">
+            <h3>Social Media</h3>
+            <li class="contact__social__media">
+              <a class="contact__social__media__path">
+                <i class="fa-brands fa-instagram"></i>
+                <span class="contact__social__media__path__text" id="instagram">Instagram</span>
+              </a>
+            </li>
+            <li class="contact__social__media">
+              <a class="contact__social__media__path">
+                <i class="fa-brands fa-twitter"></i>
+                <span class="contact__social__media__path__text" id="twitter">Twitter</span>
+              </a>
+            </li>
+            <li class="contact__social__media">
+              <a class="contact__social__media__path">
+                <i class="fa-brands fa-facebook-f"></i>
+                <span class="contact__social__media__path__text" id="facebook">Facebook</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <div id="copyright">
+          <p id="copyright_paragraph">Copyright 2022 StudioInk</p>
+        </div>
+      </footer>
+  </body>
+</html>
