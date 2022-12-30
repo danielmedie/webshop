@@ -75,9 +75,7 @@ export let products: Product[] = [
   painting8,
 ];
 
-let section: HTMLTableSectionElement = document.getElementById(
-  "new-in__container"
-) as HTMLTableSectionElement;
+let section: HTMLTableSectionElement = document.getElementById("new-in__container") as HTMLTableSectionElement;
 
 export const createHTML = () => {
   section.innerHTML = "";

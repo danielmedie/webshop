@@ -53,7 +53,6 @@ let painting8 = {
 let products: Product[] = [painting2, painting3, painting4, painting5, painting6 ,painting7, painting8];
 
 let section: HTMLDivElement = document.getElementById('new-in__container') as HTMLDivElement
-let selectionDesktop: HTMLDivElement = document.getElementById('new-in__container__desktop') as HTMLDivElement
 
 
 for (let i = 0; i < products.length; i++) {
