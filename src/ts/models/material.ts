@@ -30,14 +30,20 @@ for (let i = 0; i < products.length; i++) {
     let img: HTMLImageElement = document.createElement('img')
     let pDescription: HTMLParagraphElement = document.createElement('p')
     let pPrice: HTMLParagraphElement = document.createElement('p')
+    let button: HTMLButtonElement = document.createElement('button')
+
 
     art.appendChild(pTitle)
     art.appendChild(img)
     art.appendChild(pDescription)
     art.appendChild(pPrice)
+    art.appendChild(button)
+
 
     section.appendChild(art)
     // selectionDesktop.appendChild(art)
+    button.innerHTML = 'Köp'
+    button.className = 'shop-items-button'
 
     art.className = 'new-in__container__box'
     pTitle.className = 'new-in__container__box__title'
