@@ -76,7 +76,6 @@ for (let i = 0; i < products.length; i++) {
 
 
     section.appendChild(art)
-    // selectionDesktop.appendChild(art)
     buyButton.innerHTML = 'Köp'
     buyButton.className = 'shop-items-button'
 
